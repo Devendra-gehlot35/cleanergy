@@ -19,7 +19,7 @@ $similarProducts = array_slice($similarProducts, 0, 4);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= htmlspecialchars($product['title']) ?> - CleanEnergy</title>
+    <title><?= htmlspecialchars($product['title']) ?> - Cleanergy</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -95,11 +95,7 @@ $similarProducts = array_slice($similarProducts, 0, 4);
                         <?= htmlspecialchars($product['title'], ENT_QUOTES, 'UTF-8') ?>
                     </h1>
 
-                    <!-- Rating Row (★ 4.9) -->
-                    <div class="flex items-center gap-1.5 text-sm font-bold text-slate-800 mb-4">
-                        <span class="text-[#f59e0b] text-base">★</span>
-                        <span><?= htmlspecialchars((string)($product['rating'] ?? '4.9')) ?></span>
-                    </div>
+
 
                     <!-- Intro Lead Summary -->
                     <div class="text-slate-600 text-sm sm:text-base leading-relaxed mb-6">
@@ -114,22 +110,20 @@ $similarProducts = array_slice($similarProducts, 0, 4);
 
                     <!-- Feature Bullet Points with Green Checkmarks -->
                     <div class="space-y-2.5 mb-8">
-                        <div class="flex items-center gap-2.5 text-sm font-semibold text-slate-700">
-                            <span class="text-[#239B52] font-bold text-base">✓</span>
-                            <span>Lightweight & Powerful</span>
-                        </div>
-                        <div class="flex items-center gap-2.5 text-sm font-semibold text-slate-700">
-                            <span class="text-[#239B52] font-bold text-base">✓</span>
-                            <span>High Cold Cranking Amps</span>
-                        </div>
-                        <div class="flex items-center gap-2.5 text-sm font-semibold text-slate-700">
-                            <span class="text-[#239B52] font-bold text-base">✓</span>
-                            <span>Long-Lasting Energy</span>
-                        </div>
-                        <div class="flex items-center gap-2.5 text-sm font-semibold text-slate-700">
-                            <span class="text-[#239B52] font-bold text-base">✓</span>
-                            <span>Durable Design</span>
-                        </div>
+                        <?php 
+                        $prodHighlights = $product['highlights'] ?? [
+                            'Lightweight & Powerful',
+                            'High Cold Cranking Amps',
+                            'Long-Lasting Energy',
+                            'Durable Design'
+                        ];
+                        foreach ($prodHighlights as $hl): 
+                        ?>
+                            <div class="flex items-center gap-2.5 text-sm font-semibold text-slate-700">
+                                <span class="text-[#239B52] font-bold text-base">✓</span>
+                                <span><?= htmlspecialchars($hl) ?></span>
+                            </div>
+                        <?php endforeach; ?>
                     </div>
 
                     <!-- Quantity Counter & Buy Now Row -->
@@ -183,12 +177,13 @@ $similarProducts = array_slice($similarProducts, 0, 4);
 
                 <!-- Tab 1: Description -->
                 <div id="tab-desc" class="tab-pane max-w-5xl text-slate-600 text-sm sm:text-base leading-relaxed space-y-4">
-                    <p>
-                        <?= htmlspecialchars($product['desc']) ?>
-                    </p>
-                    <p>
-                        With <?= htmlspecialchars($product['specs']['Rated Capacity'] ?? 'high capacity') ?> of energy, it supports extended heavy duty cycles with exceptional efficiency and safe internal cell chemistry.
-                    </p>
+                    <?php if (!empty($product['full_desc']) && is_array($product['full_desc'])): ?>
+                        <?php foreach ($product['full_desc'] as $descP): ?>
+                            <p><?= htmlspecialchars($descP) ?></p>
+                        <?php endforeach; ?>
+                    <?php else: ?>
+                        <p><?= htmlspecialchars($product['desc']) ?></p>
+                    <?php endif; ?>
                 </div>
 
                 <!-- Tab 2: Specifications -->
@@ -214,12 +209,19 @@ $similarProducts = array_slice($similarProducts, 0, 4);
 
                 <!-- Tab 4: Applications -->
                 <div id="tab-apps" class="tab-pane hidden max-w-4xl text-slate-600 text-sm sm:text-base leading-relaxed space-y-3">
-                    <p>Engineered for high-reliability operations including:</p>
-                    <ul class="list-disc pl-5 space-y-2">
-                        <li>Marine inboard and outboard engine starting</li>
-                        <li>Fishing boats and multi-battery trolling motor banks</li>
-                        <li>Class A, B, and C RV motorhome house and chassis power</li>
-                        <li>Off-grid solar backup and commercial utility vehicles</li>
+                    <p class="font-bold text-slate-900">Engineered for high-reliability applications including:</p>
+                    <ul class="list-disc pl-5 space-y-2.5">
+                        <?php 
+                        $apps = $product['applications'] ?? [
+                            'Marine inboard and outboard engine starting',
+                            'Fishing boats and multi-battery trolling motor banks',
+                            'Class A, B, and C RV motorhome house and chassis power',
+                            'Off-grid solar backup and commercial utility vehicles'
+                        ];
+                        foreach ($apps as $app): 
+                        ?>
+                            <li><?= htmlspecialchars($app) ?></li>
+                        <?php endforeach; ?>
                     </ul>
                 </div>
             </div>
@@ -232,12 +234,8 @@ $similarProducts = array_slice($similarProducts, 0, 4);
                 
                 <!-- Section Header -->
                 <div class="mb-10 sm:mb-12">
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#dcfce7] text-[#166534] text-xs sm:text-sm font-semibold mb-3">
-                        Similar Products
-                    </div>
-
                     <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mb-2">
-                        Similar LiFePO4 and <span style="color: #239B52;">Sodium Ion Batteries</span> You May Like
+                         LiFePO4 and <span style="color: #239B52;">Sodium Ion Batteries</span> You May Like
                     </h2>
 
                     <p class="text-slate-600 text-sm sm:text-base max-w-3xl leading-relaxed">
@@ -271,15 +269,10 @@ $similarProducts = array_slice($similarProducts, 0, 4);
                                     <a href="<?= htmlspecialchars($simUrl) ?>"><?= htmlspecialchars($sim['title']) ?></a>
                                 </h3>
 
-                                <!-- Price & Rating -->
-                                <div class="flex items-center justify-between mb-4">
-                                    <div class="flex items-baseline gap-2">
-                                        <span class="text-base font-extrabold text-[#239B52]"><?= htmlspecialchars($sim['price']) ?></span>
-                                        <span class="text-xs text-slate-400 line-through"><?= htmlspecialchars($sim['original_price']) ?></span>
-                                    </div>
-                                    <div class="flex items-center gap-1 text-xs font-bold text-slate-800">
-                                        <span class="text-[#f59e0b] text-sm">★</span> <?= htmlspecialchars((string)($sim['rating'] ?? '4.9')) ?>
-                                    </div>
+                                <!-- Price Row -->
+                                <div class="flex items-baseline gap-2 mb-4">
+                                    <span class="text-base font-extrabold text-[#239B52]"><?= htmlspecialchars($sim['price']) ?></span>
+                                    <span class="text-xs text-slate-400 line-through"><?= htmlspecialchars($sim['original_price']) ?></span>
                                 </div>
                             </div>
 

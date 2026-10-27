@@ -5,7 +5,7 @@
         <!-- Logo -->
         <a href="/" class="flex items-center group">
             <img src="https://cleanergybattery.com/cdn/shop/files/Logo-of-cleanergy-transparent_f56c8e49-d76a-482d-bf49-716e5b7c4da5.png?height=160&v=1784631413" 
-                 alt="CleanErgy Battery Logo" 
+                 alt="Cleanergy Battery Logo" 
                  class="h-[52px] sm:h-[66px] md:h-[75px] w-auto object-contain transition-transform group-hover:scale-105">
         </a>
 

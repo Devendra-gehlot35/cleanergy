@@ -11,7 +11,7 @@
         <div class="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6">
             <!-- btn1 start -->
             <div>
-                <a href="#selection-help" class="inline-flex items-center justify-center px-8 sm:px-10 py-3.5 sm:py-4 rounded-full bg-[#41aa57] hover:bg-[#36954b] text-white font-medium text-base shadow-sm transition-all duration-200">
+                <a href="/shop.php" class="inline-flex items-center justify-center px-8 sm:px-10 py-3.5 sm:py-4 rounded-full bg-[#41aa57] hover:bg-[#36954b] text-white font-medium text-base shadow-sm transition-all duration-200">
                     Shop LiFePO4 Now
                 </a>
             </div>

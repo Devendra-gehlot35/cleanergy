@@ -14,7 +14,7 @@
                 </h3>
 
                 <!-- Form Inputs -->
-                <form action="#submit" method="POST" class="space-y-3.5" onsubmit="event.preventDefault(); alert('Thank you for reaching out! A CleanErgy expert will get back to you shortly.');">
+                <form action="#submit" method="POST" class="space-y-3.5" onsubmit="event.preventDefault(); alert('Thank you for reaching out! A Cleanergy expert will get back to you shortly.');">
                     
                     <!-- Name Input -->
                     <div>

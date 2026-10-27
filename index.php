@@ -1,13 +1,28 @@
+<?php
+// Handle clean /blog/ and /blog/{slug} routes for PHP built-in server & Apache
+$requestPath = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
+if ($requestPath !== null && preg_match('#^/blog/(.+)$#', $requestPath, $matches)) {
+    $_GET['slug'] = $matches[1];
+    include __DIR__ . '/blog-detail.php';
+    exit;
+}
+if ($requestPath === '/blog' || $requestPath === '/blog/') {
+    include __DIR__ . '/blog.php';
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clean Energy - Smart Lithium Battery Storage Solutions</title>
+    <base href="/">
+    <title>LiFePO4 & Sodium-Ion Batteries | Cleanergy Battery</title>
+    <meta name="description" content="Cleanergy Battery supplies lightweight LiFePO4 and sodium-ion batteries for marine, RV, solar, and off-grid use. Shop 12V, 24V, and 51.2V battery systems with built-in BMS.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700;1,800;1,900&family=Playfair+Display:ital,wght@1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./dist/output.css?v=<?= filemtime(__DIR__ . '/dist/output.css') ?>">
+    <link rel="stylesheet" href="/dist/output.css?v=<?= filemtime(__DIR__ . '/dist/output.css') ?>">
 </head>
 <body class="">
 

@@ -18,14 +18,14 @@
             <!-- Row 1 Right: Yacht & Battery Image -->
             <div class="overflow-hidden rounded-[28px] sm:rounded-[36px] shadow-sm">
                 <img src="./assets/yacht-battery.png" 
-                     alt="CleanErgy Marine Yacht and LiFePO4 Battery" 
+                     alt="Cleanergy Marine Yacht and LiFePO4 Battery" 
                      class="w-full h-full min-h-[280px] sm:min-h-[340px] lg:min-h-[380px] object-cover hover:scale-105 transition-transform duration-500">
             </div>
 
             <!-- Row 2 Left: Yacht & Battery Image -->
             <div class="overflow-hidden rounded-[28px] sm:rounded-[36px] shadow-sm order-2 md:order-1">
                 <img src="./assets/yacht-battery.png" 
-                     alt="CleanErgy Marine Yacht and LiFePO4 Battery" 
+                     alt="Cleanergy Marine Yacht and LiFePO4 Battery" 
                      class="w-full h-full min-h-[280px] sm:min-h-[340px] lg:min-h-[380px] object-cover hover:scale-105 transition-transform duration-500">
             </div>
 

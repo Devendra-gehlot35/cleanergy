@@ -28,8 +28,8 @@
             
             <!-- Left Side: Battery Image (Responsive height on mobile/tablet, full column on desktop) -->
             <div class="relative md:col-span-5 w-full h-32 xs:h-36 sm:h-44 md:h-auto md:min-h-full shrink-0 overflow-hidden bg-slate-900">
-                <img src="https://cdn.shopify.com/s/files/1/0739/1887/3849/files/51-2v-300ah-15-3kwh-lithium-phosphate-home-power-storage-battery-946.webp?v=1781768581" 
-                     alt="CleanErgy Lithium Battery" 
+                <img src="/assets/img/homestorage.png" 
+                     alt="Cleanergy Lithium Battery" 
                      class="w-full h-full object-cover object-center block">
                 <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent md:hidden"></div>
             </div>

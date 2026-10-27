@@ -4,6 +4,12 @@ DirectoryIndex index.php
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
+    # Support clean blog routing (e.g. /blog/how-many-ah-... -> blog-detail.php?slug=how-many-ah-...)
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^blog/(.+)$ blog-detail.php?slug=$1 [L,QSA]
+    RewriteRule ^blog/?$ blog.php [L,QSA]
+
     # Support extensionless URLs (e.g. /about -> /about.php)
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f

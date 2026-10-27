@@ -4,14 +4,14 @@ $gallery_items = [
     [
         'title' => 'Marine & Yacht Battery Storage',
         'category' => 'Marine Setup',
-        'image' => './assets/yacht-faq.png',
-        'alt' => 'CleanErgy Marine Boat LiFePO4 Battery Setup',
+        'image' => '/assets/img/banner2.jpg',
+        'alt' => 'Cleanergy Marine Boat LiFePO4 Battery Setup',
     ],
     [
         'title' => 'RV & Camper Off-Grid Solar Power',
         'category' => 'RV & Off-Grid',
-        'image' => 'https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?auto=format&fit=crop&w=1200&q=80',
-        'alt' => 'CleanErgy RV and Solar Off-Grid Power Setup',
+        'image' => '/assets/img/blog-rv-battery.webp',
+        'alt' => 'Cleanergy RV and Solar Off-Grid Power Setup',
     ]
 ];
 ?>

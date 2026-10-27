@@ -9,7 +9,7 @@
             Our team can help you choose the correct voltage, capacity and battery type based on your usage, charging setup and operating conditions.
         </p>
         <div>
-            <a href="#selection-help" class="inline-flex items-center justify-center px-8 sm:px-10 py-3.5 sm:py-4 rounded-full bg-[#41aa57] hover:bg-[#36954b] text-white font-medium text-base shadow-sm transition-all duration-200">
+            <a href="/contact.php" class="inline-flex items-center justify-center px-8 sm:px-10 py-3.5 sm:py-4 rounded-full bg-[#41aa57] hover:bg-[#36954b] text-white font-medium text-base shadow-sm transition-all duration-200">
                 Get Battery Selection Help
             </a>
         </div>

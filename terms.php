@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms & Conditions - CleanErgy Battery</title>
+    <title>Terms & Conditions - Cleanergy Battery</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700;1,800;1,900&family=Playfair+Display:ital,wght@1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
@@ -16,7 +16,7 @@
     include __DIR__ . '/components/navbar.php';
     ?>
 
-    <!-- 1. Hero Banner (Centered Title, CleanErgy Gradient matching site style) -->
+    <!-- 1. Hero Banner (Centered Title, Cleanergy Gradient matching site style) -->
     <section class="relative w-full min-h-[460px] sm:min-h-[520px] overflow-hidden flex items-center justify-center text-center"
              style="background: linear-gradient(135deg, #74d5e9 0%, #4ec1db 50%, #30b1cf 100%);">
         
@@ -37,7 +37,7 @@
             </h1>
 
             <p class="text-slate-800 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto leading-relaxed">
-                Please read these terms and conditions carefully before purchasing or using CleanErgy battery systems, accessories, and power solutions.
+                Please read these terms and conditions carefully before purchasing or using Cleanergy battery systems, accessories, and power solutions.
             </p>
 
         </div>
@@ -56,7 +56,7 @@
                         1. Acceptance of Terms
                     </h2>
                     <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
-                        By accessing, browsing, inquiring, or purchasing products through CleanErgy Battery, you agree to be bound by these Terms and Conditions and all applicable laws and regulations. If you do not agree with any part of these terms, you are prohibited from using this website and purchasing our power systems.
+                        By accessing, browsing, inquiring, or purchasing products through Cleanergy Battery, you agree to be bound by these Terms and Conditions and all applicable laws and regulations. If you do not agree with any part of these terms, you are prohibited from using this website and purchasing our power systems.
                     </p>
                 </div>
 
@@ -89,7 +89,7 @@
                         4. Warranty &amp; BMS Protection
                     </h2>
                     <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
-                        CleanErgy batteries come equipped with built-in intelligent Battery Management Systems (BMS) protecting against over-voltage, under-voltage, over-current, and temperature extremes. Tampering, opening casing seals, short-circuiting, or using non-compatible chargers will void the warranty immediately.
+                        Cleanergy batteries come equipped with built-in intelligent Battery Management Systems (BMS) protecting against over-voltage, under-voltage, over-current, and temperature extremes. Tampering, opening casing seals, short-circuiting, or using non-compatible chargers will void the warranty immediately.
                     </p>
                 </div>
 
@@ -100,7 +100,7 @@
                         5. Limitation of Liability
                     </h2>
                     <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
-                        In no event shall CleanErgy LLC, its directors, employees, or partners be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of or inability to use our battery systems, improper installation, or electrical system incompatibility.
+                        In no event shall Cleanergy LLC, its directors, employees, or partners be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of or inability to use our battery systems, improper installation, or electrical system incompatibility.
                     </p>
                 </div>
 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - CleanErgy Battery</title>
+    <title>Privacy Policy - Cleanergy Battery</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700;1,800;1,900&family=Playfair+Display:ital,wght@1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
@@ -16,7 +16,7 @@
     include __DIR__ . '/components/navbar.php';
     ?>
 
-    <!-- 1. Hero Banner (Centered Title, CleanErgy Gradient matching site style) -->
+    <!-- 1. Hero Banner (Centered Title, Cleanergy Gradient matching site style) -->
     <section class="relative w-full min-h-[460px] sm:min-h-[520px] overflow-hidden flex items-center justify-center text-center"
              style="background: linear-gradient(135deg, #74d5e9 0%, #4ec1db 50%, #30b1cf 100%);">
         
@@ -37,7 +37,7 @@
             </h1>
 
             <p class="text-slate-800 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto leading-relaxed">
-                Your privacy is paramount. Learn how CleanErgy LLC collects, uses, protects, and handles your personal information.
+                Your privacy is paramount. Learn how Cleanergy LLC collects, uses, protects, and handles your personal information.
             </p>
 
         </div>
@@ -113,7 +113,7 @@
                         If you have questions regarding this privacy policy or your stored information, contact our privacy officer.
                     </p>
                     <a href="/contact.php" class="inline-flex items-center justify-center px-8 py-3 rounded-full bg-[#12b3d6] hover:bg-[#0ea5e9] text-white text-sm font-bold shadow-sm transition-all duration-200">
-                        Contact CleanErgy
+                        Contact Cleanergy
                     </a>
                 </div>
 

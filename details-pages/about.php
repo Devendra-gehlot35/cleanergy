@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - CleanEnergy</title>
+    <title>About Cleanergy Battery | LiFePO4 & Na-Ion Specialists</title>
+    <meta name="description" content="Learn about Cleanergy Battery — supplying advanced lithium iron phosphate and sodium-ion battery systems for reliable off-grid, marine, and solar power needs.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700;1,800;1,900&family=Playfair+Display:ital,wght@1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
@@ -25,7 +26,7 @@
     <!-- 1. Hero Banner (Exact Same Size, Image & Layout as All Other Pages) -->
     <section class="relative w-full min-h-[580px] sm:min-h-[660px] h-[92vh] sm:h-screen max-h-[1000px] overflow-hidden bg-slate-900 flex items-center">
         <!-- Background Image Edge-to-Edge -->
-        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=2070&q=80" 
+        <img src="/assets/img/banner1.jpg" 
              alt="Clean Energy About Us Banner" 
              class="absolute inset-0 w-full h-full object-cover object-center">
         
@@ -37,12 +38,12 @@
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10 pt-24 sm:pt-32 pb-14 sm:pb-20">
             <div class="max-w-3xl">
                 <span class="inline-block text-[11px] sm:text-sm font-bold tracking-[0.2em] text-[#38bdf8] uppercase mb-2 sm:mb-3 drop-shadow">
-                    CLEANENERGY
+                    CLEANERGY
                 </span>
                 
                 <h1 class="text-3xl sm:text-5xl lg:text-[62px] text-white leading-[1.12] sm:leading-[1.1] font-extrabold tracking-tight mb-4 sm:mb-5 drop-shadow-md">
                     <span class="italic block">About</span>
-                    <span class="italic font-['Playfair_Display',serif] font-semibold block text-slate-100">CleanErgy</span>
+                    <span class="italic font-['Playfair_Display',serif] font-semibold block text-slate-100">Cleanergy</span>
                 </h1>
 
                 <p class="text-sm sm:text-lg text-white/95 max-w-2xl font-normal leading-relaxed drop-shadow">
@@ -87,7 +88,7 @@
                     <div class="flex flex-col space-y-8 lg:pt-2">
                         <!-- Top Image: Luxury Yacht Cruising -->
                         <div class="overflow-hidden rounded-3xl shadow-lg border border-slate-100">
-                            <img src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=80" 
+                            <img src="/assets/img/banner2.jpg" 
                                  alt="Luxury Yacht Marine Power Solutions" 
                                  class="w-full h-[260px] sm:h-[320px] object-cover hover:scale-105 transition-transform duration-500">
                         </div>
@@ -95,13 +96,13 @@
                         <!-- 3 Text Paragraphs matching PDF verbatim -->
                         <div class="space-y-4 text-slate-600 text-sm sm:text-base leading-relaxed">
                             <p>
-                                CleanErgy, founded to revolutionize the energy solutions business, has been a trusted source of revolutionary battery technology, Chargers, and Battery Management Systems (BMS).
+                                Cleanergy, founded to revolutionize the energy solutions business, has been a trusted source of revolutionary battery technology, Chargers, and Battery Management Systems (BMS).
                             </p>
                             <p>
-                                CleanErgy was started in 2009. We want to provide businesses and individuals with creative, sustainable, and high-performing energy solutions that promote growth and efficiency.
+                                Cleanergy was started in 2009. We want to provide businesses and individuals with creative, sustainable, and high-performing energy solutions that promote growth and efficiency.
                             </p>
                             <p>
-                                From cutting-edge Lithium Phosphate and Sodium Ion battery technologies for affordable power for fishing boat / trolling motors, golf cart, RV and Off-grid plus emergency power. CleanErgy is your partner in powering the future.
+                                From cutting-edge Lithium Phosphate and Sodium Ion battery technologies for affordable power for fishing boat / trolling motors, golf cart, RV and Off-grid plus emergency power. Cleanergy is your partner in powering the future.
                             </p>
                         </div>
 
@@ -181,7 +182,7 @@
 
                         <!-- Button: Contact Us -->
                         <div>
-                            <a href="/index.php#contact" 
+                            <a href="/contact.php" 
                                class="inline-flex items-center justify-center px-9 py-3.5 rounded-full text-white font-bold text-sm sm:text-base bg-[#12b3d6] hover:bg-[#0ea5e9] shadow-md shadow-cyan-500/20 transition-all duration-200">
                                 Contact Us
                             </a>
@@ -206,7 +207,7 @@
                        class="inline-flex items-center justify-center px-8 sm:px-10 py-3.5 sm:py-4 rounded-full bg-[#41aa57] hover:bg-[#36954b] text-white font-bold text-sm sm:text-base shadow-sm transition-all duration-200">
                         Shop LiFePO4 Now
                     </a>
-                    <a href="/index.php#contact" 
+                    <a href="/contact.php" 
                        class="inline-flex items-center justify-center px-8 sm:px-10 py-3.5 sm:py-4 rounded-full border-2 border-slate-900 font-bold text-sm sm:text-base text-slate-900 shadow-sm transition-all duration-200 hover:bg-slate-900 hover:text-white">
                         Contact Battery Expert
                     </a>

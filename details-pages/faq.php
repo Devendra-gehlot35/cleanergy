@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQs - CleanEnergy</title>
+    <title>Frequently Asked Questions | Cleanergy Battery</title>
+    <meta name="description" content="Common questions and expert answers about Cleanergy LiFePO4 and sodium-ion batteries, BMS protection, charging, safety, and cold-weather operation.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700;1,800;1,900&family=Playfair+Display:ital,wght@1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
@@ -15,7 +16,7 @@
     // Include Fixed Floating Navbar
     include __DIR__ . '/../components/navbar.php';
 
-    // Detailed FAQs List matching reference UI
+    // Detailed FAQs List matching official cleanergybattery.com FAQs
     $faqs = [
         [
             'question' => 'What is a LiFePO4 battery?',
@@ -23,28 +24,58 @@
             'is_open' => false
         ],
         [
-            'question' => 'What is a LiFePO4 battery?',
-            'answer' => 'LiFePO4 batteries deliver up to 5 times longer cycle life, are 60% lighter, maintain full voltage until fully depleted, charge 4 times faster, and require zero maintenance or fluid refills.',
+            'question' => 'Why choose Cleanergy Battery?',
+            'answer' => 'Cleanergy Battery delivers premium LiFePO4 and sodium-ion batteries engineered with advanced Battery Management Systems (BMS), high-quality cells, long service life, and reliable performance for demanding applications.',
             'is_open' => false
         ],
         [
-            'question' => 'What is a LiFePO4 battery?',
-            'answer' => 'Cleanergy Batteries are built with Grade-A prismatic cells, intelligent BMS protection, high continuous discharge rates, and rugged casings built for demanding marine, RV, and off-grid conditions.',
+            'question' => 'What applications are Cleanergy batteries designed for?',
+            'answer' => 'Our batteries are ideal for marine boats, RVs and campers, solar energy systems, off-grid homes, golf carts, backup power, industrial equipment, and commercial energy storage.',
             'is_open' => false
         ],
         [
-            'question' => 'What is a LiFePO4 battery?',
-            'answer' => 'Our batteries are engineered for marine boats, trolling motors, RVs and campers, residential solar energy storage, off-grid cabins, golf carts, and commercial power backup.',
+            'question' => 'What is the difference between LiFePO4 and lead-acid batteries?',
+            'answer' => 'LiFePO4 batteries are lighter, charge faster, last significantly longer, require no maintenance, and deliver higher efficiency than traditional lead-acid batteries.',
             'is_open' => false
         ],
         [
-            'question' => 'What is a LiFePO4 battery?',
-            'answer' => 'While standard chargers may partially charge them, a dedicated lithium or multi-stage charger with an appropriate LiFePO4 profile is recommended to ensure 100% capacity and optimal battery longevity.',
+            'question' => 'Are Cleanergy batteries safe?',
+            'answer' => 'Yes. Our batteries use one of the safest lithium chemistries available and feature an intelligent Battery Management System (BMS) that protects against overcharging, over-discharging, overcurrent, overheating, and short circuits.',
+            'is_open' => false
+        ],
+        [
+            'question' => 'What is a Battery Management System (BMS)?',
+            'answer' => 'A Battery Management System (BMS) is an electronic protection system that monitors battery voltage, current, and temperature to ensure safe operation and maximize battery lifespan.',
+            'is_open' => false
+        ],
+        [
+            'question' => 'Can Cleanergy batteries be used in cold weather?',
+            'answer' => 'Yes. Selected models include automatic self-heating technology that warms the battery during charging in freezing conditions, helping maintain safe and efficient performance.',
             'is_open' => false
         ],
         [
             'question' => 'How long do LiFePO4 batteries last?',
             'answer' => 'Depending on usage and operating conditions, LiFePO4 batteries can provide thousands of charge cycles, often lasting several times longer than conventional lead-acid batteries.',
+            'is_open' => false
+        ],
+        [
+            'question' => 'Can I replace my lead-acid battery with a LiFePO4 battery?',
+            'answer' => 'In most applications, yes. Cleanergy LiFePO4 batteries are designed as a drop-in replacement for many lead-acid batteries while offering improved performance, reduced weight, and longer lifespan.',
+            'is_open' => false
+        ],
+        [
+            'question' => 'What battery voltages do you offer?',
+            'answer' => 'Cleanergy Battery offers batteries in multiple voltage options, including 12V, 24V, 36V, 48V, and 51.2V systems for residential, commercial, and industrial applications.',
+            'is_open' => false
+        ],
+        [
+            'question' => 'Do your batteries support solar energy systems?',
+            'answer' => 'Yes. Our LiFePO4 batteries are designed for solar and off-grid energy storage, providing high efficiency, deep-cycle capability, and long-term reliability.',
+            'is_open' => false
+        ],
+        [
+            'question' => 'How do I choose the right battery?',
+            'answer' => 'The ideal battery depends on your application, required voltage, capacity, discharge rate, and environmental conditions. Our team can help you select the best solution for your specific needs.',
             'is_open' => false
         ]
     ];
@@ -157,7 +188,7 @@
             </p>
 
             <div>
-                <a href="/index.php#contact" 
+                <a href="/contact.php" 
                    class="inline-flex items-center justify-center px-10 py-3.5 rounded-full text-white font-bold text-sm sm:text-base shadow-sm hover:shadow-md hover:scale-105 transition-all duration-200"
                    style="background-color: #12b3d6;">
                     Contact Us

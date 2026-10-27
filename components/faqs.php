@@ -140,7 +140,7 @@ $faqs = [
             <div class="lg:col-span-5 flex">
                 <div class="overflow-hidden rounded-3xl shadow-lg border border-slate-100 w-full h-full">
                     <img src="./assets/yacht-faq.png" 
-                         alt="CleanErgy Marine Power and LiFePO4 Battery" 
+                         alt="Cleanergy Marine Power and LiFePO4 Battery" 
                          class="w-full h-full min-h-[440px] sm:min-h-[520px] lg:min-h-[580px] object-cover hover:scale-105 transition-transform duration-500">
                 </div>
             </div>

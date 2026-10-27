@@ -29,9 +29,9 @@
             <!-- Left Side: Dynamic Product Battery Image (Responsive banner on mobile/tablet, full column on desktop) -->
             <div class="relative md:col-span-5 w-full h-32 xs:h-36 sm:h-44 md:h-auto md:min-h-full shrink-0 overflow-hidden bg-slate-900">
                 <img id="enquiry-modal-img" 
-                     src="https://cdn.shopify.com/s/files/1/0739/1887/3849/files/51-2v-300ah-15-3kwh-lithium-phosphate-home-power-storage-battery-946.webp?v=1781768581" 
-                     data-default-src="https://cdn.shopify.com/s/files/1/0739/1887/3849/files/51-2v-300ah-15-3kwh-lithium-phosphate-home-power-storage-battery-946.webp?v=1781768581"
-                     alt="CleanErgy Lithium Battery" 
+                     src="/assets/img/homestorage.png" 
+                     data-default-src="/assets/img/homestorage.png"
+                     alt="Cleanergy Lithium Battery" 
                      class="w-full h-full object-cover object-center block">
                 <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent md:hidden"></div>
             </div>
@@ -47,7 +47,7 @@
                     
                     <!-- Battery Name Directly Under Heading -->
                     <div class="mt-2 sm:mt-2.5 inline-flex items-center px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-lg sm:rounded-xl bg-emerald-50 border border-emerald-200/80 text-[#239B52] text-[11px] sm:text-xs md:text-sm font-bold">
-                        <span id="enquiry-product-name-text">CleanErgy Battery System</span>
+                        <span id="enquiry-product-name-text">Cleanergy Battery System</span>
                     </div>
                 </div>
 
@@ -146,7 +146,7 @@ function openEnquiryModal(productName = '', productImg = '') {
     }
 
     // Set Product Name under Heading and in hidden input
-    const displayName = (productName || 'CleanErgy Battery System').trim();
+    const displayName = (productName || 'Cleanergy Battery System').trim();
     if (prodTitleEl) {
         prodTitleEl.textContent = displayName;
     }
@@ -245,7 +245,7 @@ document.addEventListener('click', function(e) {
             if (text.includes('quote') || href.includes('quote')) {
                 prodName = 'Custom Battery Quote';
             } else {
-                prodName = 'CleanErgy Battery System';
+                prodName = 'Cleanergy Battery System';
             }
         }
 

@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - CleanEnergy</title>
+    <title>Contact Battery Installation and Repair Experts – Cleanergy Battery</title>
+    <meta name="description" content="Get in touch with the Cleanergy Battery team. We supply LiFePO4 and sodium-ion batteries for RV, marine, solar, and off-grid applications. Contact us today.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700;1,800;1,900&family=Playfair+Display:ital,wght@1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
@@ -55,7 +56,7 @@
                     </h2>
 
                     <!-- Contact Form -->
-                    <form action="#submit" method="POST" class="space-y-4" onsubmit="event.preventDefault(); alert('Thank you for contacting CleanErgy! Our battery specialists will get back to you shortly.');">
+                    <form action="#submit" method="POST" class="space-y-4" onsubmit="event.preventDefault(); alert('Thank you for contacting Cleanergy! Our battery specialists will get back to you shortly.');">
                         
                         <!-- Name Input -->
                         <div>

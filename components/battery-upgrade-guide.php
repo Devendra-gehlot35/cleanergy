@@ -31,17 +31,17 @@ $lead_acid_points = [
         <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
             <!-- Pill Badge -->
             <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#cbf4d8] text-slate-800 text-xs sm:text-sm font-medium mb-4">
-                Battery Upgrade Guide
+                Battery Comparison
             </div>
 
             <!-- Main Heading with Split Color -->
             <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 leading-tight tracking-tight mb-3">
-                Switching from Lead-Acid to LiFePO4: <span class="text-[#82b89a] font-extrabold">What You Gain</span>
+                LiFePO4 vs Lead-Acid Batteries: <span class="text-[#82b89a] font-extrabold">Which Is Better?</span>
             </h2>
 
             <!-- Subtitle Description -->
             <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
-                LiFePO4 lasts longer, weighs less and charges faster. See how the two compare on life, weight, maintenance and long-term cost.
+              LiFePO4 batteries offer longer life, lighter weight, faster charging and better usable capacity compared to traditional lead-acid batteries. While lead-acid batteries may cost less upfront, LiFePO4 batteries often provide better long-term value for marine, RV, solar, golf cart and off-grid applications.
             </p>
         </div>
 

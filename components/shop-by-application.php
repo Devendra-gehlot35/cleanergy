@@ -139,15 +139,15 @@ $applications = [
                 </div>
 
                 <!-- Main Heading -->
-                <h2 class="text-2xl sm:text-3xl lg:text-[36px] font-extrabold text-slate-900 leading-tight tracking-tight">
-                    Find the Right LiFePO4 or Sodium-Ion Battery for 
-                    <span class="text-[#12b3d6]">Your Boat, RV, Home Solar System or Off-Grid Setup</span>
+                <h2 class="text-2xl sm:text-3xl lg:text-[36px] font-extrabold text-slate-900 leading-tight tracking-tight ">
+                    Battery Solutions for
+                    <span class=" block text-[#12b3d6]">Every Power Need</span>
                 </h2>
             </div>
 
             <!-- Right side description text -->
             <div class="lg:max-w-sm text-slate-600 text-sm sm:text-base leading-relaxed lg:pb-1">
-                Choose your application below and see batteries matched to your voltage, capacity and operating conditions.
+               Find the right Cleanergy battery system for marine, RV, golf cart, solar, home storage, off-grid and cold-weather applications. Explore LiFePO4 and sodium-ion batteries designed for reliable long-term performance.
             </div>
         </div>
 

@@ -20,7 +20,7 @@
 
                 <!-- Left Column Image: Boats docked in marina harbor -->
                 <div class="overflow-hidden rounded-3xl shadow-lg border border-slate-100">
-                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=900&q=80" 
+                    <img src="./assets/img/banner3.jpg" 
                          alt="Cleanergy Marine and Harbor Solutions" 
                          class="w-full h-[380px] sm:h-[460px] lg:h-[500px] object-cover hover:scale-105 transition-transform duration-500">
                 </div>
@@ -30,7 +30,7 @@
             <div class="flex flex-col space-y-8 lg:pt-2">
                 <!-- Right Column Image: Luxury Yacht -->
                 <div class="overflow-hidden rounded-3xl shadow-lg border border-slate-100">
-                    <img src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=80" 
+                    <img src="./assets/img/banner1.jpg" 
                          alt="Yacht and Marine Battery Power" 
                          class="w-full h-[260px] sm:h-[320px] object-cover hover:scale-105 transition-transform duration-500">
                 </div>
@@ -38,10 +38,13 @@
                 <!-- Text Paragraphs -->
                 <div class="space-y-5 text-slate-600 text-sm sm:text-base leading-relaxed">
                     <p>
-                        CleanErgy, founded to revolutionize the energy solutions business, has been a trusted source of revolutionary battery technology, Chargers, and Battery Management Systems (BMS).
+                        Cleanergy, founded to revolutionize the energy solutions business, has been a trusted source of revolutionary battery technology, Chargers, and Battery Management Systems (BMS).
                     </p>
                     <p>
-                        CleanErgy was started in 2009. We want to provide businesses and individuals with creative, sustainable, and high-performing energy solutions that promote growth and efficiency.
+                        Cleanergy was started in 2009. We want to provide businesses and individuals with creative, sustainable, and high-performing energy solutions that promote growth and efficiency.
+                    </p>
+                    <p>
+                        From cutting-edge Lithium Phosphate and Sodium Ion battery technologies for affordable power for fishing boat / trolling motors, golf cart, RV and Off-grid plus emergency power. Cleanergy is your partner in powering the future.
                     </p>
                 </div>
 

@@ -30,10 +30,10 @@ $products = array_slice(array_values($all_products), 0, 4);
             <!-- Main Heading -->
             <h2 class="text-2xl sm:text-3xl lg:text-[38px] font-extrabold text-slate-900 leading-tight tracking-tight mb-4">
 
-                Top LiFePO4 and sodium-ion picks
+               LiFePO4 & Sodium-Ion Batteries 
 
                 <span class="text-[#82b89a] font-extrabold">
-                    for every application
+                   for Every Application
                 </span>
 
             </h2>
@@ -41,9 +41,7 @@ $products = array_slice(array_values($all_products), 0, 4);
             <!-- Subtitle -->
             <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
 
-                Compare selected battery systems for marine starting,
-                fishing boats, RVs, golf carts, home energy storage
-                and off-grid power.
+              Compare selected battery systems for marine starting, fishing boats, RVs, golf carts, home energy storage and off-grid power.
 
             </p>
 
@@ -87,19 +85,19 @@ $products = array_slice(array_values($all_products), 0, 4);
                     <!-- =================================
                          PRODUCT IMAGE CONTAINER (Full Size matching Gallery Cards)
                     ================================== -->
-                    <div class="relative bg-[#f8fafc] rounded-2xl overflow-hidden mb-3.5 h-64 sm:h-72 flex items-center justify-center p-2">
+                    <div class="relative bg-[#f8fafc] rounded-2xl overflow-hidden mb-3.5 h-[241px] sm:h-[273px] flex items-center justify-center">
 
                         <!-- Stock Badge -->
                         <span class="absolute top-2.5 right-2.5 z-10 px-2.5 py-1 rounded-full text-white text-[10px] font-extrabold uppercase tracking-wide shadow-xs" style="background-color: <?= $product['in_stock'] ? '#239B52' : '#DC3545' ?>;">
                             <?= $product['in_stock'] ? 'IN STOCK' : 'OUT OF STOCK' ?>
                         </span>
 
-                        <a href="<?= $safeUrl ?>" class="w-full h-full flex items-center justify-center overflow-hidden">
+                        <a href="<?= $safeUrl ?>" class="w-full h-full block overflow-hidden">
                             <img
                                 src="<?= $safeImage ?>"
                                 alt="<?= $safeName ?>"
                                 loading="lazy"
-                                class="w-full h-full object-contain p-0 scale-105 group-hover:scale-115 transition-transform duration-300"
+                                class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
                             >
                         </a>
 
@@ -123,37 +121,32 @@ $products = array_slice(array_values($all_products), 0, 4);
 
 
                         <!-- =================================
-                             PRICE AND RATING
+                             PRICE
                         ================================== -->
+                        <div class="flex items-baseline gap-2 mb-3">
 
-                        <div class="flex items-center justify-between gap-2 mb-5">
+                            <!-- Current Price -->
+                            <span class="text-base sm:text-lg font-extrabold text-[#239B52]">
+                                <?= htmlspecialchars($product['price']) ?>
+                            </span>
 
-                            <!-- Price -->
-                            <div class="flex flex-wrap items-baseline gap-2">
+                            <!-- Old Price -->
+                            <span class="text-xs text-slate-400 line-through">
+                                <?= htmlspecialchars($product['original_price'] ?? $product['old_price']) ?>
+                            </span>
 
-                                <!-- Current Price -->
-                                <span class="text-base sm:text-lg font-extrabold text-[#239B52]">
-                                    <?= htmlspecialchars($product['price']) ?>
-                                </span>
+                        </div>
 
-                                <!-- Old Price -->
-                                <span class="text-xs text-slate-400 line-through">
-                                    <?= htmlspecialchars($product['original_price'] ?? $product['old_price']) ?>
-                                </span>
-
-                            </div>
-
-                            <!-- Rating -->
-                            <div class="flex items-center gap-1 text-xs font-bold text-slate-800 shrink-0">
-
-                                <span class="text-[#f59e0b] text-sm">
-                                    ★
-                                </span>
-
-                                <?= htmlspecialchars((string)($product['rating'] ?? '4.9')) ?>
-
-                            </div>
-
+                        <!-- =================================
+                             BEST FOR SECTION (Matching Image Reference)
+                        ================================== -->
+                        <div class="bg-[#f0fbfd] border-l-[4.5px] border-[#0ea5e9] rounded-2xl p-3 sm:p-3.5 mb-4 min-h-[76px] flex flex-col justify-center">
+                            <span class="text-[13px] sm:text-sm font-bold text-[#088395] leading-snug mb-1 block">
+                                Best For:
+                            </span>
+                            <p class="text-[13px] sm:text-[14px] text-slate-700 leading-relaxed font-normal">
+                                <?= htmlspecialchars($product['best_for'] ?? 'Marine starting, vehicles and cold-weather use.') ?>
+                            </p>
                         </div>
 
 

@@ -1,12 +1,32 @@
 <?php
 // Blog Detail Page
-$id = isset($_GET['id']) ? (string)$_GET['id'] : '1';
+$id = isset($_GET['id']) ? (string)$_GET['id'] : '';
+$slug = isset($_GET['slug']) ? (string)$_GET['slug'] : '';
+
+// Helper for normalizing image URLs
+function formatBlogImg($url) {
+    if (empty($url)) return '/assets/blog-1.png';
+    if (preg_match('#^https?://#i', $url)) return $url;
+    $clean = ltrim($url, '.');
+    if (strpos($clean, '/') !== 0) {
+        $clean = '/' . $clean;
+    }
+    return $clean;
+}
+
+// Load blogs from data/blogs.json
+$blogsFile = __DIR__ . '/data/blogs.json';
+$allBlogs = [];
+if (file_exists($blogsFile)) {
+    $allBlogs = json_decode(file_get_contents($blogsFile), true) ?: [];
+}
 
 // Articles repository
 $articles = [
     '1' => [
         'id' => '1',
         'title' => 'How Many Ah Does an RV Battery Need? 100Ah vs 200Ah vs 300Ah LiFePO4 Guide',
+        'slug' => 'how-many-ah-does-an-rv-battery-need-100ah-vs-200ah-vs-300ah-lifepo4-guide',
         'subtitle' => 'A complete sizing guide to choosing the right lithium battery capacity for boondocking, appliances, and off-grid RV travel.',
         'date' => 'September 26, 2026',
         'category' => 'RV & Boondocking Guide',
@@ -24,84 +44,228 @@ $articles = [
             ],
             [
                 'heading' => 'Usable Capacity: Why LiFePO4 Beats Lead-Acid',
-                'body' => 'Traditional lead-acid and AGM batteries should only be discharged to 50% depth of discharge (DoD) to avoid permanent sulfation and early failure. CleanErgy Grade-A LiFePO4 batteries deliver 100% of their rated capacity safely, maintain full 12.8V–13.2V operating voltage until nearly empty, charge 4x faster, and last over 10 years.'
+                'body' => 'Traditional lead-acid and AGM batteries should only be discharged to 50% depth of discharge (DoD) to avoid permanent sulfation and early failure. Cleanergy Grade-A LiFePO4 batteries deliver 100% of their rated capacity safely, maintain full 12.8V–13.2V operating voltage until nearly empty, charge 4x faster, and last over 10 years.'
             ],
             [
                 'heading' => 'Charging Sources & System Sizing',
-                'body' => 'To keep your battery bank topped up, pair your setup with 200W–600W of rooftop monocrystalline solar panels, a dedicated MPPT charge controller, and a DC-DC alternator charger to charge while driving your motorhome or towing vehicle.'
+                'body' => 'To keep your battery bank topped , pair your setup with 200W–600W of rooftop monocrystalline solar panels, a dedicated MPPT charge controller, and a DC-DC alternator charger to charge while driving your motorhome or towing vehicle.'
             ]
         ]
     ],
     '2' => [
         'id' => '2',
-        'title' => 'Marine & Trolling Motor Battery Sizing: 12V vs 24V vs 36V Lithium Setup Guide',
-        'subtitle' => 'Maximize thrust, reduce boat weight, and enjoy full-day continuous fishing on the open water.',
+        'title' => 'Ann Arbor Home Battery Rebate 2026: How to Get Up to $3,500 for Battery Storage',
+        'slug' => 'ann-arbor-home-battery-rebate-2026',
+        'subtitle' => 'Maximize home energy incentives, reduce electric bills, and ensure uninterrupted emergency power backup.',
         'date' => 'October 04, 2026',
-        'category' => 'Marine & Fishing Technology',
+        'category' => 'Home Energy Storage',
         'image' => '/assets/blog-2.png',
-        'overview' => '<strong>Short answer:</strong> Trolling motors require matched voltage corresponding to motor thrust ratings: 12V for motors up to 55 lbs of thrust, 24V for 70 to 80 lbs, and 36V for 100+ lbs of heavy-duty offshore thrust. CleanErgy Marine Lithium batteries provide stable continuous discharge with 70% weight reduction compared to heavy lead-acid sets.',
-        'intro' => 'Whether you are upgrading a tournament bass boat, center console, or kayak, choosing the correct marine battery configuration ensures your trolling motor never loses power against stiff winds and river currents.',
+        'overview' => '<strong>Short answer:</strong> Ann Arbor residents may qualify for up to $3,500 in clean energy rebates for installing certified LiFePO4 residential battery storage systems. Cleanergy 51.2V 300Ah systems meet local requirements, providing seamless solar integration and whole-home resilience.',
+        'intro' => 'With Michigan winter storms and utility grid outages on the rise, pairing solar panels with high-capacity battery storage keeps your essential home circuits running.',
         'sections' => [
             [
-                'heading' => 'Trolling Motor Voltage Requirements Explained',
-                'body' => 'Motor voltage is directly tied to thrust requirements: <strong>12V systems</strong> power kayaks and small skiffs; <strong>24V systems</strong> are the standard for 17–20 ft bass boats; and <strong>36V systems</strong> are built for larger 21+ ft multi-species and offshore vessels that face heavy waves.'
+                'heading' => 'Ann Arbor Clean Energy Rebate Overview',
+                'body' => 'The Ann Arbor municipal sustainability program offers direct financial incentives to homeowners who invest in certified battery energy storage systems that reduce peak grid load and support municipal decarbonization goals.'
             ],
             [
-                'heading' => 'Weight Savings: How Dropping 150 lbs Transforms Boat Handling',
-                'body' => 'Three traditional Group 31 AGM batteries weigh over 210 lbs at the front of your vessel. Replacing them with CleanErgy marine lithium drops your boat weight by over 140 lbs, increasing your top-end speed, hole shot, fuel efficiency, and draft clearance in shallow waters.'
-            ],
-            [
-                'heading' => 'Constant Voltage Delivery vs Speed Drop-off',
-                'body' => 'When lead-acid batteries drain, their voltage drops sharply, causing your trolling motor to slow down and struggle. CleanErgy marine batteries maintain steady 12.8V/25.6V/38.4V output throughout the entire day of fishing.'
-            ],
-            [
-                'heading' => 'Marine Waterproofing and Battery Compartment Safety',
-                'body' => 'CleanErgy marine units are enclosed in vibration-dampened, corrosion-resistant housings with internal cell clamping to endure heavy hull pounding and choppy waters without cell dislocation or circuit failure.'
+                'heading' => 'Eligible Battery Systems & Technology',
+                'body' => 'Systems must utilize non-toxic, long-cycle lithium chemistries like LiFePO4 with smart BMS communications, integrated fire suppression, and hybrid inverter compatibility.'
             ]
         ]
     ],
     '3' => [
         'id' => '3',
-        'title' => 'LiFePO4 vs Sodium-Ion in Cold Weather: Extreme Winter Temperature Performance',
+        'title' => 'Cold-Weather LiFePO4 Battery Guide for Michigan: RV, Marine, Solar & Backup Power',
+        'slug' => 'cold-weather-lifepo4-battery-guide-michigan',
         'subtitle' => 'Detailed engineering comparison of sub-zero discharge, cold-cranking amps, and winter storage protocols.',
         'date' => 'October 12, 2026',
         'category' => 'Cold Weather Engineering',
         'image' => '/assets/yacht-battery.png',
         'overview' => '<strong>Short answer:</strong> Sodium-ion batteries deliver exceptional sub-zero cranking down to -30°C (-22°F) without freezing risks or pre-heating requirements. Standard LiFePO4 batteries excel in longevity and energy density, but require intelligent BMS low-temp charge cutoff or internal heating pads when charging below freezing.',
-        'intro' => 'If you operate off-grid cabins, snow vehicles, ice fishing equipment, or cold-climate marine vessels, understanding how cold temperatures affect battery chemistry is vital for system safety and reliability.',
+        'intro' => 'If you operate off-grid cabins, snow vehicles, ice fishing equipment, or cold-climate marine vessels in Michigan, understanding how cold temperatures affect battery chemistry is vital for system safety and reliability.',
         'sections' => [
             [
                 'heading' => 'Why Freezing Temperatures Hurt Conventional Batteries',
-                'body' => 'Sub-zero temperatures dramatically slow chemical reactions inside energy storage cells. While traditional lead-acid batteries lose over 50% of their cranking power in freezing conditions and risk cracked cases from frozen electrolyte, CleanErgy lithium and sodium-ion technologies provide reliable winter power.'
+                'body' => 'Sub-zero temperatures dramatically slow chemical reactions inside energy storage cells. While traditional lead-acid batteries lose over 50% of their cranking power in freezing conditions and risk cracked cases from frozen electrolyte, Cleanergy lithium and sodium-ion technologies provide reliable winter power.'
             ],
             [
                 'heading' => 'Sodium-Ion Chemical Advantages in Sub-Zero Climates',
-                'body' => 'CleanErgy Sodium-Ion starting batteries maintain superior discharge rates down to -30°C without the freezing damage risks of lead-acid. Sodium ions diffuse faster through low-temperature electrolytes, making them unbeatable for winter engine starting, snowmobiles, and unheated northern cabins.'
+                'body' => 'Cleanergy Sodium-Ion starting batteries maintain superior discharge rates down to -30°C without the freezing damage risks of lead-acid. Sodium ions diffuse faster through low-temperature electrolytes, making them unbeatable for winter engine starting, snowmobiles, and unheated northern cabins.'
             ],
             [
                 'heading' => 'LiFePO4 Cold Charging Safeguards & Internal Heaters',
-                'body' => 'Standard LiFePO4 cells must not be charged below 0°C (32°F) to prevent lithium plating on the anodes. CleanErgy cold-weather series feature intelligent BMS sensors and automatic internal heating elements that warm the cells using incoming solar power before initiating charge cycles.'
-            ],
-            [
-                'heading' => 'Winter Storage Best Practices',
-                'body' => 'Store CleanErgy batteries disconnected at 50%–70% state of charge in a dry environment. Unlike lead-acid batteries that self-discharge rapidly and freeze, CleanErgy Grade-A cells lose only 2%–3% charge per month during winter layup.'
+                'body' => 'Standard LiFePO4 cells must not be charged below 0°C (32°F) to prevent lithium plating on the anodes. Cleanergy cold-weather series feature intelligent BMS sensors and automatic internal heating elements that warm the cells using incoming solar power before initiating charge cycles.'
             ]
         ]
     ]
 ];
 
-$article = $articles[$id] ?? $articles['1'];
+// Match article by slug or id
+$article = null;
+
+// 1. Check data/blogs.json first by seo_url, id, or link
+foreach ($allBlogs as $b) {
+    $bSlug = $b['seo_url'] ?? '';
+    $bId = (string)($b['id'] ?? '');
+    $bLink = (string)($b['link'] ?? '');
+    
+    if (($slug !== '' && ($bSlug === $slug || str_contains($bLink, $slug) || str_contains($slug, $bSlug) || str_contains($bSlug, substr($slug, 0, 18)))) ||
+        ($id !== '' && ($bId === $id || $bSlug === $id))) {
+        
+        // Find matching predefined rich article if available
+        $rich = null;
+        foreach ($articles as $art) {
+            if (stripos($art['title'], substr($b['title'], 0, 20)) !== false || ($art['slug'] ?? '') === $slug) {
+                $rich = $art;
+                break;
+            }
+        }
+        
+        $article = [
+            'id' => $bId,
+            'title' => $b['title'],
+            'subtitle' => $rich['subtitle'] ?? ($b['seo_desc'] ?? $b['desc']),
+            'date' => $b['date'],
+            'category' => $rich['category'] ?? 'Battery Guide',
+            'image' => formatBlogImg($b['image']),
+            'overview' => $rich['overview'] ?? ('<p>' . htmlspecialchars($b['desc']) . '</p>'),
+            'intro' => $rich['intro'] ?? '',
+            'description' => $b['description'] ?? ($rich['description'] ?? ''),
+            'sections' => $rich['sections'] ?? [
+                [
+                    'heading' => 'Overview & Key Details',
+                    'body' => htmlspecialchars($b['desc'])
+                ]
+            ]
+        ];
+        break;
+    }
+}
+
+// 2. Fallback to predefined articles if not found in blogs.json
+if (!$article) {
+    if ($slug !== '') {
+        foreach ($articles as $art) {
+            if (($art['slug'] ?? '') === $slug || stripos($art['title'], str_replace('-', ' ', substr($slug, 0, 25))) !== false) {
+                $article = $art;
+                break;
+            }
+        }
+    }
+    if (!$article) {
+        $article = $articles[$id] ?? $articles['1'];
+    }
+}
+$article['image'] = formatBlogImg($article['image'] ?? '');
 ?>
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= htmlspecialchars($article['title']) ?> - CleanErgy Blog</title>
+    <base href="/">
+    <title><?= htmlspecialchars($article['title']) ?> - Cleanergy Blog</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700;1,800;1,900&family=Playfair+Display:ital,wght@1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/dist/output.css?v=<?= filemtime(__DIR__ . '/dist/output.css') ?>">
+    <style>
+        .blog-detailed-content h2 {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin-top: 2.25rem;
+            margin-bottom: 1rem;
+            line-height: 1.25;
+            letter-spacing: -0.02em;
+        }
+        @media (min-width: 640px) {
+            .blog-detailed-content h2 {
+                font-size: 2.125rem;
+            }
+        }
+        .blog-detailed-content h3 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-top: 1.75rem;
+            margin-bottom: 0.75rem;
+            line-height: 1.3;
+        }
+        .blog-detailed-content p {
+            margin-bottom: 1.25rem;
+            line-height: 1.8;
+            color: #334155;
+            font-size: 1.05rem;
+        }
+        .blog-detailed-content strong {
+            font-weight: 700;
+            color: #0f172a;
+        }
+        .blog-detailed-content ul, .blog-detailed-content ol {
+            margin-top: 0.75rem;
+            margin-bottom: 1.5rem;
+            padding-left: 1.75rem;
+        }
+        .blog-detailed-content ul {
+            list-style-type: disc;
+        }
+        .blog-detailed-content ol {
+            list-style-type: decimal;
+        }
+        .blog-detailed-content li {
+            margin-bottom: 0.5rem;
+            line-height: 1.7;
+            color: #334155;
+        }
+        .blog-detailed-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+            margin-bottom: 2.5rem;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+            font-size: 0.95rem;
+            display: table;
+        }
+        .blog-detailed-content th {
+            background-color: #f8fafc;
+            padding: 0.85rem 1.15rem;
+            text-align: left;
+            font-weight: 700;
+            color: #0f172a;
+            border-bottom: 2px solid #cbd5e1;
+        }
+        .blog-detailed-content td {
+            padding: 0.85rem 1.15rem;
+            border-bottom: 1px solid #e2e8f0;
+            color: #334155;
+            vertical-align: top;
+        }
+        .blog-detailed-content tr:nth-child(even) td {
+            background-color: #fcfdfe;
+        }
+        .blog-detailed-content a {
+            color: #088395;
+            font-weight: 600;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            transition: color 0.15s ease;
+        }
+        .blog-detailed-content a:hover {
+            color: #0e7490;
+        }
+        .blog-detailed-content blockquote {
+            border-left: 4px solid #12b3d6;
+            padding: 0.75rem 1.25rem;
+            margin: 1.75rem 0;
+            background-color: #f0fbfd;
+            border-radius: 0 0.5rem 0.5rem 0;
+            font-style: italic;
+            color: #1e293b;
+        }
+    </style>
 </head>
 <body class="bg-white font-['Plus_Jakarta_Sans',sans-serif] text-slate-900 min-h-screen flex flex-col justify-between">
 
@@ -147,33 +311,40 @@ $article = $articles[$id] ?? $articles['1'];
                 <span>RELEASE DATE: <?= htmlspecialchars(strtoupper($article['date'])) ?></span>
             </div>
 
-            <!-- Overview / Short Answer Lead -->
-            <?php if (!empty($article['overview'])): ?>
-                <p class="text-slate-800 text-base sm:text-lg leading-relaxed mb-6 font-normal">
-                    <?= $article['overview'] ?>
-                </p>
-            <?php endif; ?>
+            <?php if (!empty($article['description'])): ?>
+                <!-- Full Blog Description from Live Site / Admin Editor -->
+                <div class="blog-detailed-content leading-relaxed text-slate-700 text-base sm:text-lg">
+                    <?= $article['description'] ?>
+                </div>
+            <?php else: ?>
+                <!-- Overview / Short Answer Lead -->
+                <?php if (!empty($article['overview'])): ?>
+                    <p class="text-slate-800 text-base sm:text-lg leading-relaxed mb-6 font-normal">
+                        <?= $article['overview'] ?>
+                    </p>
+                <?php endif; ?>
 
-            <?php if (!empty($article['intro'])): ?>
-                <p class="text-slate-700 text-base sm:text-lg leading-relaxed mb-8 font-normal">
-                    <?= $article['intro'] ?>
-                </p>
-            <?php endif; ?>
+                <?php if (!empty($article['intro'])): ?>
+                    <p class="text-slate-700 text-base sm:text-lg leading-relaxed mb-8 font-normal">
+                        <?= $article['intro'] ?>
+                    </p>
+                <?php endif; ?>
 
-            <!-- Article Sections (Left-Aligned Heading & Body) -->
-            <div class="space-y-8 sm:space-y-10">
-                <?php foreach ($article['sections'] as $sec): ?>
-                    <div>
-                        <h2 class="text-2xl sm:text-3xl lg:text-[34px] font-extrabold text-slate-900 tracking-tight mb-4 leading-tight">
-                            <?= htmlspecialchars($sec['heading']) ?>
-                        </h2>
-                        
-                        <p class="text-slate-700 text-base sm:text-lg leading-relaxed font-normal">
-                            <?= $sec['body'] ?>
-                        </p>
-                    </div>
-                <?php endforeach; ?>
-            </div>
+                <!-- Article Sections (Left-Aligned Heading & Body) -->
+                <div class="space-y-8 sm:space-y-10">
+                    <?php foreach ($article['sections'] as $sec): ?>
+                        <div>
+                            <h2 class="text-2xl sm:text-3xl lg:text-[34px] font-extrabold text-slate-900 tracking-tight mb-4 leading-tight">
+                                <?= htmlspecialchars($sec['heading']) ?>
+                            </h2>
+                            
+                            <p class="text-slate-700 text-base sm:text-lg leading-relaxed font-normal">
+                                <?= $sec['body'] ?>
+                            </p>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            <?php endif; ?>
 
             <!-- Back to All Guides Button (Left-Aligned) -->
             <div class="mt-14 sm:mt-16 pt-8 border-t border-slate-200">

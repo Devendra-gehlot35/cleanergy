@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>No Refund Policy - CleanErgy Battery</title>
+    <title>No Refund Policy - Cleanergy Battery</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700;1,800;1,900&family=Playfair+Display:ital,wght@1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
@@ -16,7 +16,7 @@
     include __DIR__ . '/components/navbar.php';
     ?>
 
-    <!-- 1. Hero Banner (Centered Title, CleanErgy Gradient matching site style) -->
+    <!-- 1. Hero Banner (Centered Title, Cleanergy Gradient matching site style) -->
     <section class="relative w-full min-h-[460px] sm:min-h-[520px] overflow-hidden flex items-center justify-center text-center"
              style="background: linear-gradient(135deg, #74d5e9 0%, #4ec1db 50%, #30b1cf 100%);">
         
@@ -37,7 +37,7 @@
             </h1>
 
             <p class="text-slate-800 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto leading-relaxed">
-                Clear and transparent guidelines regarding custom orders, hazardous freight regulations, and warranty protection on all CleanErgy battery systems.
+                Clear and transparent guidelines regarding custom orders, hazardous freight regulations, and warranty protection on all Cleanergy battery systems.
             </p>
 
         </div>
@@ -67,7 +67,7 @@
                         2. Manufacturer Warranty &amp; Defect Replacement
                     </h2>
                     <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
-                        While we do not offer monetary refunds or change-of-mind returns, <strong class="text-slate-900">every CleanErgy battery is fully backed by our manufacturer warranty</strong>. In the rare event of a confirmed hardware or BMS defect arising from manufacturing, our technical engineering team will repair or replace your unit promptly.
+                        While we do not offer monetary refunds or change-of-mind returns, <strong class="text-slate-900">every Cleanergy battery is fully backed by our manufacturer warranty</strong>. In the rare event of a confirmed hardware or BMS defect arising from manufacturing, our technical engineering team will repair or replace your unit promptly.
                     </p>
                 </div>
 
@@ -78,7 +78,7 @@
                         3. Delivery Inspection &amp; Freight Claims
                     </h2>
                     <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
-                        Customers are required to inspect battery shipments upon delivery. Any transit damage or exterior container compromise must be documented immediately on the freight bill of lading and reported to CleanErgy customer support within 48 hours of receipt.
+                        Customers are required to inspect battery shipments upon delivery. Any transit damage or exterior container compromise must be documented immediately on the freight bill of lading and reported to Cleanergy customer support within 48 hours of receipt.
                     </p>
                 </div>
 

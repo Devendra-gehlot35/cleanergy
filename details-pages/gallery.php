@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Our Gallery - CleanErgy Battery Installations & Setups</title>
+    <title>Our Gallery - Cleanergy Battery Installations & Setups</title>
 
-    <meta name="description" content="Explore real-world CleanErgy LiFePO4 battery installations across marine yachts, RVs, home solar storage, and off-grid power systems.">
+    <meta name="description" content="Explore real-world Cleanergy LiFePO4 battery installations across marine yachts, RVs, home solar storage, and off-grid power systems.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -150,16 +150,31 @@ require_once __DIR__ . '/../data/gallery_loader.php';
 $gallery_items = load_gallery_items();
 ?>
 
-<!-- MAIN GALLERY SECTION (EXACT UI FROM USER REFERENCE) -->
-<main class="flex-1 pt-28 sm:pt-36 pb-16 sm:pb-24 bg-[#f4f6fa] text-slate-900">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- 1. Hero Banner (Exact Same Size, Image & Layout as Contact Us, About Us & Shop Pages) -->
+    <section class="relative w-full min-h-[580px] sm:min-h-[660px] h-[92vh] sm:h-screen max-h-[1000px] overflow-hidden flex items-center justify-center text-center bg-slate-900">
+        
+        <!-- Clean Background Image -->
+        <img src="/assets/img/blog-fishing-boat-trolling.webp" 
+             alt="Clean Energy Gallery Banner" 
+             class="absolute inset-0 w-full h-full object-cover object-center">
+        
+        <!-- Subtle Neutral Tint for Clean Text Readability -->
+        <div class="absolute inset-0 bg-black/35"></div>
 
-        <!-- TITLE: OUR GALLERY -->
-        <div class="text-center mb-6 sm:mb-8">
-            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-wider uppercase font-['Plus_Jakarta_Sans',sans-serif]">
-                OUR GALLERY
+        <!-- Big Centered "Our Gallery" Title (Matching Contact Us / About Us Pages) -->
+        <div class="relative z-10 px-4 pt-16">
+            <span class="inline-block text-[11px] sm:text-sm font-bold tracking-[0.2em] text-[#38bdf8] uppercase mb-3 drop-shadow">
+                CLEANERGY
+            </span>
+            <h1 class="text-5xl sm:text-7xl lg:text-8xl font-black text-white italic tracking-wide drop-shadow-[0_4px_16px_rgba(0,0,0,0.5)]">
+                Our Gallery
             </h1>
         </div>
+    </section>
+
+    <!-- 2. Main Gallery Section -->
+    <main class="flex-1 py-14 sm:py-18 lg:py-20 bg-[#f4f6fa] text-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <!-- 4-COLUMN SQUARE IMAGE GRID -->
         <div id="gallery-grid-images" class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5 sm:gap-4 lg:gap-5">
@@ -173,7 +188,7 @@ $gallery_items = load_gallery_items();
                          loading="lazy"
                          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     
-                    <!-- Hover Effect with subtle CleanErgy icon -->
+                    <!-- Hover Effect with subtle Cleanergy icon -->
                     <span class="absolute inset-0 bg-slate-950/20 opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                         <span class="w-11 h-11 rounded-full bg-white/95 text-[#12b3d6] flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition-all duration-300">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">

@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop Batteries - CleanEnergy</title>
+    <title>Products | Cleanergy Battery</title>
+    <meta name="description" content="Shop 12V, 24V, and 51.2V LiFePO4 and sodium-ion batteries for marine, RV, solar, golf cart, and off-grid power systems.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700;1,800;1,900&family=Playfair+Display:ital,wght@1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
@@ -29,23 +30,120 @@
 
     $searchQuery = trim($_GET['q'] ?? '');
 
-    // Active collection metadata
-    $activeCollection = (!empty($selectedCollection) && isset($all_collections[$selectedCollection])) 
-        ? $all_collections[$selectedCollection] 
-        : null;
+    // 5 Specific Filter Tabs matching the 5 Cleanergy products
+    $shopFilterTabs = [
+        'sodium-ion' => [
+            'slug' => 'sodium-ion',
+            'title' => 'Sodium-Ion Batteries',
+            'short_title' => 'Sodium-Ion',
+            'desc' => 'High-cranking sodium-ion starting battery designed for marine engines, vehicles and cold-weather starting applications.',
+            'product_id' => 1,
+        ],
+        'home-storage' => [
+            'slug' => 'home-storage',
+            'title' => 'Home Storage Batteries',
+            'short_title' => 'Home Storage',
+            'desc' => 'High-capacity 51.2V 300Ah 15.3kWh energy storage with smart BMS, built-in wheels for mobility, and seamless hybrid solar inverter integration.',
+            'product_id' => 2,
+        ],
+        'golf-cart-rv' => [
+            'slug' => 'golf-cart-rv',
+            'title' => 'Golf Cart / RV Batteries',
+            'short_title' => 'Golf Cart / RV',
+            'desc' => 'High-performance 5,460Wh LiFePO4 battery pack engineered for golf carts, RVs and mobile power applications.',
+            'product_id' => 3,
+        ],
+        'fishing-boat' => [
+            'slug' => 'fishing-boat',
+            'title' => 'Fishing Boat Batteries',
+            'short_title' => 'Fishing Boat',
+            'desc' => 'Deep-cycle 24V 100Ah 2,400Wh LiFePO4 power engineered for trolling motors, onboard electronics and extended fishing trips.',
+            'product_id' => 4,
+        ],
+        'deep-cycle' => [
+            'slug' => 'deep-cycle',
+            'title' => 'Deep Cycle Batteries',
+            'short_title' => 'Deep Cycle',
+            'desc' => 'Dependable 12V 100Ah 1,200Wh deep-cycle LiFePO4 battery with 4,000+ cycles for marine trolling motors, RVs and solar systems.',
+            'product_id' => 5,
+        ],
+    ];
 
-    // Calculate product counts per collection for the filter tabs
+    // Detailed Card Metadata for each product matching reference design
+    $shopCardDetails = [
+        1 => [
+            'badge' => 'SODIUM-ION',
+            'display_title' => '12V 200Ah Sodium-Ion Starting Battery',
+            'subtitle' => 'High-current sodium-ion starting battery designed for marine engines, vehicles and cold-weather starting applications.',
+            'specs' => [
+                ['label' => 'Voltage', 'val' => '12V'],
+                ['label' => 'Capacity', 'val' => '200Ah'],
+                ['label' => 'Energy', 'val' => '2.4kWh'],
+                ['label' => 'Chemistry', 'val' => 'Sodium-Ion'],
+            ],
+            'best_for' => 'Marine starting, vehicles and cold-weather use.'
+        ],
+        2 => [
+            'badge' => 'HOME STORAGE',
+            'display_title' => '51.2V 300Ah 15.3kWh LiFePO4 Home Storage Battery',
+            'subtitle' => 'High-capacity LiFePO4 battery system for home energy storage, solar backup and off-grid power applications.',
+            'specs' => [
+                ['label' => 'Voltage', 'val' => '51.2V'],
+                ['label' => 'Capacity', 'val' => '300Ah'],
+                ['label' => 'Energy', 'val' => '15.3kWh'],
+                ['label' => 'Chemistry', 'val' => 'LiFePO4'],
+            ],
+            'best_for' => 'Home energy storage, solar backup and off-grid power.'
+        ],
+        3 => [
+            'badge' => 'GOLF CART / RV',
+            'display_title' => '51.2V 105Ah 5.46kWh LiFePO4 Battery',
+            'subtitle' => 'Compact 51.2V LiFePO4 battery system suitable for golf carts, RVs and mobile power applications.',
+            'specs' => [
+                ['label' => 'Voltage', 'val' => '51.2V'],
+                ['label' => 'Capacity', 'val' => '105Ah'],
+                ['label' => 'Energy', 'val' => '5.46kWh'],
+                ['label' => 'Chemistry', 'val' => 'LiFePO4'],
+            ],
+            'best_for' => 'Golf carts, RVs and mobile power applications.'
+        ],
+        4 => [
+            'badge' => 'FISHING BOAT',
+            'display_title' => '24V 100Ah 2.4kWh LiFePO4 Battery',
+            'subtitle' => 'Deep-cycle 24V 100Ah LiFePO4 battery system engineered for trolling motors, fishing boats and off-grid power.',
+            'specs' => [
+                ['label' => 'Voltage', 'val' => '24V'],
+                ['label' => 'Capacity', 'val' => '100Ah'],
+                ['label' => 'Energy', 'val' => '2.4kWh'],
+                ['label' => 'Chemistry', 'val' => 'LiFePO4'],
+            ],
+            'best_for' => 'Fishing boats, trolling motors, solar and off-grid systems.'
+        ],
+        5 => [
+            'badge' => 'DEEP CYCLE',
+            'display_title' => '12V 100Ah 1.2kWh LiFePO4 Battery',
+            'subtitle' => 'Dependable 12V 100Ah deep-cycle LiFePO4 battery with 4000+ cycles for marine, RV and solar setups.',
+            'specs' => [
+                ['label' => 'Voltage', 'val' => '12V'],
+                ['label' => 'Capacity', 'val' => '100Ah'],
+                ['label' => 'Energy', 'val' => '1.2kWh'],
+                ['label' => 'Chemistry', 'val' => 'LiFePO4'],
+            ],
+            'best_for' => 'Marine electronics, campers, solar and backup energy.'
+        ],
+    ];
+
+    // Active collection metadata
+    $activeCollection = (!empty($selectedCollection) && isset($shopFilterTabs[$selectedCollection])) 
+        ? $shopFilterTabs[$selectedCollection] 
+        : ((!empty($selectedCollection) && isset($all_collections[$selectedCollection])) ? $all_collections[$selectedCollection] : null);
+
+    // Calculate product counts per filter tab
     $collectionCounts = [
         'all' => count($all_products)
     ];
-    foreach ($all_collections as $slug => $col) {
-        $c = 0;
-        foreach ($all_products as $p) {
-            if (in_array($slug, $p['collections'] ?? [])) {
-                $c++;
-            }
-        }
-        $collectionCounts[$slug] = $c;
+    foreach ($shopFilterTabs as $slug => $tab) {
+        $collectionCounts[$slug] = 1;
     }
 
     // Filter products
@@ -53,10 +151,22 @@
     foreach ($all_products as $id => $prod) {
         $matchesCollection = true;
         if (!empty($selectedCollection)) {
-            $prodCols = $prod['collections'] ?? [];
-            $matchesCollection = in_array($selectedCollection, $prodCols)
-                || (strpos(strtolower($prod['category'] ?? ''), str_replace('-', ' ', $selectedCollection)) !== false)
-                || (strpos(strtolower($prod['title'] ?? ''), str_replace('-', ' ', $selectedCollection)) !== false);
+            if ($selectedCollection === 'sodium-ion') {
+                $matchesCollection = ($id == 1);
+            } elseif ($selectedCollection === 'home-storage') {
+                $matchesCollection = ($id == 2);
+            } elseif ($selectedCollection === 'golf-cart-rv' || $selectedCollection === 'golf-cart' || $selectedCollection === 'rv') {
+                $matchesCollection = ($id == 3);
+            } elseif ($selectedCollection === 'fishing-boat') {
+                $matchesCollection = ($id == 4);
+            } elseif ($selectedCollection === 'deep-cycle') {
+                $matchesCollection = ($id == 5);
+            } else {
+                $prodCols = $prod['collections'] ?? [];
+                $matchesCollection = in_array($selectedCollection, $prodCols)
+                    || (strpos(strtolower($prod['category'] ?? ''), str_replace('-', ' ', $selectedCollection)) !== false)
+                    || (strpos(strtolower($prod['title'] ?? ''), str_replace('-', ' ', $selectedCollection)) !== false);
+            }
         }
 
         $matchesSearch = true;
@@ -81,7 +191,7 @@
     <!-- 1. Hero Banner (Top Image matching all other pages) -->
     <section class="relative w-full min-h-[580px] sm:min-h-[660px] h-[92vh] sm:h-screen max-h-[1000px] overflow-hidden bg-slate-900 flex items-center">
         <!-- Background Image Edge-to-Edge -->
-        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=2070&q=80" 
+        <img src="/assets/img/banner2.jpg" 
              alt="Clean Energy Battery Shop Banner" 
              class="absolute inset-0 w-full h-full object-cover object-center">
         
@@ -93,16 +203,16 @@
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10 pt-24 sm:pt-32 pb-14 sm:pb-20">
             <div class="max-w-3xl">
                 <span class="inline-block text-[11px] sm:text-sm font-bold tracking-[0.2em] text-[#38bdf8] uppercase mb-2 sm:mb-3 drop-shadow">
-                    CLEANENERGY BATTERY SHOP
+                    CLEANERGY 
                 </span>
                 
                 <h1 class="text-3xl sm:text-5xl lg:text-[62px] text-white leading-[1.12] sm:leading-[1.1] font-extrabold tracking-tight mb-4 sm:mb-5 drop-shadow-md">
-                    <span class="italic block">Shop Premium LiFePO4 &</span>
-                    <span class="italic font-['Playfair_Display',serif] font-semibold block text-slate-100">Sodium-Ion Batteries</span>
+                    <span class="italic block">LiFePO4 & Sodium-Ion</span>
+                    <span class="italic font-['Playfair_Display',serif] font-semibold block text-slate-100">Battery Systems</span>
                 </h1>
 
                 <p class="text-sm sm:text-lg text-white/95 max-w-2xl font-normal leading-relaxed drop-shadow">
-                    Find dependable, high-performance battery systems engineered specifically for marine, RV, solar energy and off-grid power applications.
+                    Explore Cleanergy Battery’s 12V, 24V and 51.2V battery systems for marine, RV, golf cart, solar, home energy storage and off-grid power applications.🚤
                 </p>
             </div>
         </div>
@@ -136,35 +246,38 @@
                     </p>
                 <?php else: ?>
                     <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#d7f3fb] text-slate-800 text-xs sm:text-sm font-semibold mb-3">
-                        Cleanergy Store
+                        Battery Collection
                     </div>
                     <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight mb-3">
-                        High-Performance <span style="color: #12b3d6;">Batteries</span> In Stock
+                        Find the Right   <span style="color: #12b3d6;">Battery </span>for Your Application
                     </h2>
+                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed mb-2">
+                       Cleanergy Battery offers a focused range of LiFePO4 and sodium-ion battery systems designed for dependable power across marine, RV, golf cart, solar, home storage and off-grid applications. Explore 12V, 24V and 51.2V battery solutions built for long service life, stable output and reliable performance in demanding conditions.
+                    </p>
                     <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
-                        Explore our reliable LiFePO4 and sodium-ion starting and deep-cycle batteries built for boats, RVs, golf carts and off-grid systems.
+                        Whether you are upgrading from lead-acid batteries, building an off-grid solar system, powering a fishing boat or looking for a home energy storage solution, Cleanergy Battery provides application-focused battery systems for modern power needs.
                     </p>
                 <?php endif; ?>
             </div>
 
-            <!-- Horizontal Collection Filter Bar (Single Line Row) -->
-            <div class="mb-8">
-                <div class="flex items-center gap-2 sm:gap-2.5 overflow-x-auto pb-3 pt-1 scrollbar-none no-scrollbar flex-nowrap">
+            <!-- Horizontal Collection Filter Bar (Centered) -->
+            <div class="mb-8 flex justify-center">
+                <div class="flex items-center justify-center flex-wrap gap-2 sm:gap-2.5 pb-2 pt-1">
                     <!-- "All" Tab -->
                     <a href="/shop.php#shop-catalog" 
                        class="shrink-0 whitespace-nowrap px-3.5 sm:px-4 lg:px-4.5 py-2 sm:py-2.5 rounded-full text-xs sm:text-[13px] lg:text-sm font-bold transition-all shadow-xs <?= (empty($selectedCollection) && empty($searchQuery)) ? 'bg-[#00a8cc] text-white shadow-xs' : 'bg-[#f0f7fa] hover:bg-[#e2f3f8] text-slate-800' ?>">
                         All Batteries (<?= $collectionCounts['all'] ?>)
                     </a>
 
-                    <!-- Each Collection Pill -->
-                    <?php foreach ($all_collections as $slug => $col): ?>
+                    <!-- Each Collection Pill (5 Product Tabs) -->
+                    <?php foreach ($shopFilterTabs as $slug => $tab): ?>
                         <?php 
-                            $isActive = ($selectedCollection === $slug);
-                            $count = $collectionCounts[$slug] ?? 0;
+                            $isActive = ($selectedCollection === $slug || 
+                                        ($slug === 'golf-cart-rv' && ($selectedCollection === 'golf-cart' || $selectedCollection === 'rv')));
                         ?>
                         <a href="/shop.php?collection=<?= urlencode($slug) ?>#shop-catalog" 
                            class="shrink-0 whitespace-nowrap px-3.5 sm:px-4 lg:px-4.5 py-2 sm:py-2.5 rounded-full text-xs sm:text-[13px] lg:text-sm font-semibold transition-all shadow-xs <?= $isActive ? 'bg-[#00a8cc] text-white font-bold shadow-xs' : 'bg-[#f0f7fa] hover:bg-[#e2f3f8] text-slate-800' ?>">
-                            <?= htmlspecialchars($col['short_title']) ?> (<?= $count ?>)
+                            <?= htmlspecialchars($tab['short_title']) ?> (1)
                         </a>
                     <?php endforeach; ?>
                 </div>
@@ -192,7 +305,15 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch">
                     <?php foreach ($products as $prod): ?>
                         <?php
-                            $safeTitle = htmlspecialchars($prod['title'], ENT_QUOTES, 'UTF-8');
+                            $pid = (int)($prod['id'] ?? 1);
+                            $meta = $shopCardDetails[$pid] ?? [
+                                'badge' => strtoupper($prod['category'] ?? 'BATTERY'),
+                                'display_title' => $prod['title'],
+                                'subtitle' => $prod['desc'],
+                                'specs' => [],
+                                'best_for' => $prod['best_for'] ?? 'Marine starting, vehicles and cold-weather use.'
+                            ];
+                            $safeTitle = htmlspecialchars($meta['display_title'], ENT_QUOTES, 'UTF-8');
                             $safeImage = htmlspecialchars($prod['image'], ENT_QUOTES, 'UTF-8');
                             $safePrice = htmlspecialchars($prod['price'], ENT_QUOTES, 'UTF-8');
                             $safeOriginalPrice = htmlspecialchars($prod['original_price'], ENT_QUOTES, 'UTF-8');
@@ -202,8 +323,8 @@
                         ?>
                         <article class="bg-white rounded-3xl border border-[#239B52] p-4 sm:p-5 flex flex-col justify-between shadow-xs hover:shadow-lg transition-all duration-300 group">
                             <div>
-                                <!-- Inner Image Box (Full Size matching Gallery Cards) -->
-                                <div class="relative bg-[#f8fafc] rounded-2xl p-2 flex items-center justify-center h-64 sm:h-72 mb-4 overflow-hidden">
+                                <!-- Inner Image Box -->
+                                <div class="relative bg-[#f8fafc] rounded-2xl flex items-center justify-center h-60 sm:h-64 mb-4 overflow-hidden">
                                     <!-- Stock Badge (Top Right) -->
                                     <span class="absolute top-3 right-3 z-10 inline-flex items-center px-3 py-1 rounded-full text-white text-[11px] font-extrabold uppercase tracking-wide shadow-xs" style="background-color: <?= $inStock ? '#239B52' : '#DC3545' ?>;">
                                         <?= $inStock ? 'IN STOCK' : 'NOT IN STOCK' ?>
@@ -214,28 +335,55 @@
                                         <img src="<?= $safeImage ?>" 
                                              alt="<?= $safeTitle ?>" 
                                              loading="lazy"
-                                             class="w-full h-full object-contain p-0 scale-105 transition-transform duration-300 group-hover:scale-115">
+                                             class="w-full h-full object-cover object-center scale-105 transition-transform duration-300 group-hover:scale-115">
                                     </a>
                                 </div>
+
+
 
                                 <!-- Product Title -->
                                 <h3 class="text-base sm:text-lg font-bold text-slate-900 leading-snug mb-2 hover:text-[#239B52] transition-colors">
                                     <a href="<?= $safeDetailUrl ?>"><?= $safeTitle ?></a>
                                 </h3>
 
-                                <!-- Price & Star Rating Row -->
-                                <div class="flex items-center gap-2 mb-4">
+                                <!-- Product Subtitle / Description (Red Box 1) -->
+                                <p class="text-[13px] sm:text-sm text-slate-600 leading-relaxed mb-4 min-h-[44px]">
+                                    <?= htmlspecialchars($meta['subtitle']) ?>
+                                </p>
+
+                                <!-- 4 Key Specs in 2x2 Grid (Red Box 2) -->
+                                <div class="grid grid-cols-2 gap-2.5 mb-4">
+                                    <?php foreach (($meta['specs'] ?? []) as $sp): ?>
+                                        <div class="bg-[#f8fafc] border border-slate-100/90 rounded-2xl p-3 shadow-2xs">
+                                            <span class="text-xs text-slate-500 font-normal block leading-tight mb-1">
+                                                <?= htmlspecialchars($sp['label']) ?>
+                                            </span>
+                                            <span class="text-[13px] sm:text-sm font-bold text-slate-900 block leading-tight">
+                                                <?= htmlspecialchars($sp['val']) ?>
+                                            </span>
+                                        </div>
+                                    <?php endforeach; ?>
+                                </div>
+
+                                <!-- Best For Section (Exact Match to Homepage UI) -->
+                                <div class="bg-[#f0fbfd] border-l-[4.5px] border-[#0ea5e9] rounded-2xl p-3 sm:p-3.5 mb-4 min-h-[76px] flex flex-col justify-center">
+                                    <span class="text-[13px] sm:text-sm font-bold text-[#088395] leading-snug mb-1 block">
+                                        Best For:
+                                    </span>
+                                    <p class="text-[13px] sm:text-[14px] text-slate-700 leading-relaxed font-normal">
+                                        <?= htmlspecialchars($meta['best_for'] ?? 'Marine starting, vehicles and cold-weather use.') ?>
+                                    </p>
+                                </div>
+
+                                <!-- Price Row (Ratings Removed) -->
+                                <div class="flex items-baseline gap-2 mb-4">
                                     <span class="text-lg sm:text-xl font-extrabold text-[#239B52]"><?= $safePrice ?></span>
                                     <span class="text-xs sm:text-sm text-slate-400 line-through"><?= $safeOriginalPrice ?></span>
-                                    <div class="ml-auto flex items-center gap-1 text-xs sm:text-sm font-bold text-slate-700">
-                                        <span class="text-[#f59e0b]">★</span>
-                                        <span><?= htmlspecialchars((string)($prod['rating'] ?? '4.9')) ?></span>
-                                    </div>
                                 </div>
                             </div>
 
                             <!-- Buttons Row (Buy Now & Enquiry) -->
-                            <div class="flex items-center gap-2.5 mt-auto pt-2">
+                            <div class="flex items-center gap-2.5 mt-auto pt-1">
                                 <a href="<?= $safeDetailUrl ?>" class="flex-1 py-2.5 px-4 rounded-full bg-[#239B52] hover:bg-[#1e8244] text-white text-center font-bold text-xs sm:text-sm transition-colors shadow-sm">
                                     Buy Now
                                 </a>
@@ -296,7 +444,7 @@
                             </td>
                             <td class="py-4 px-4 text-slate-700 whitespace-nowrap font-medium">12V</td>
                             <td class="py-4 px-4 text-slate-700 whitespace-nowrap font-medium">200Ah</td>
-                            <td class="py-4 px-4 text-slate-600">Confirm specs</td>
+                            <td class="py-4 px-4 text-slate-600">2.4kWh</td>
                             <td class="py-4 px-4 whitespace-nowrap">
                                 <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-[#d7f3fb] text-[#0e7490]">
                                     Sodium-Ion
