@@ -196,22 +196,22 @@
              class="absolute inset-0 w-full h-full object-cover object-center">
         
         <!-- Gradient Overlay matching Homepage Hero Slider -->
-        <div class="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-slate-900/50 to-transparent"></div>
-        <div class="absolute inset-0 bg-black/20"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-slate-950/85 via-slate-950/70 to-slate-950/85 sm:bg-gradient-to-r sm:from-slate-950/90 sm:via-slate-900/55 sm:to-transparent"></div>
+        <div class="absolute inset-0 bg-black/25"></div>
 
         <!-- Banner Content with exact homepage slider padding & layout -->
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10 pt-24 sm:pt-32 pb-14 sm:pb-20">
-            <div class="max-w-3xl">
-                <span class="inline-block text-[11px] sm:text-sm font-bold tracking-[0.2em] text-[#38bdf8] uppercase mb-2 sm:mb-3 drop-shadow">
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10 pt-20 sm:pt-32 pb-14 sm:pb-20 flex justify-center sm:justify-start">
+            <div class="max-w-3xl flex flex-col items-center sm:items-start text-center sm:text-left">
+                <span class="inline-flex items-center text-[10px] sm:text-sm font-bold tracking-[0.2em] text-cyan-300 sm:text-[#38bdf8] uppercase mb-2 sm:mb-3 drop-shadow bg-cyan-950/50 sm:bg-transparent px-3 py-1 sm:p-0 rounded-full border border-cyan-400/20 sm:border-0">
                     CLEANERGY 
                 </span>
                 
-                <h1 class="text-3xl sm:text-5xl lg:text-[62px] text-white leading-[1.12] sm:leading-[1.1] font-extrabold tracking-tight mb-4 sm:mb-5 drop-shadow-md">
+                <h1 class="text-2xl xs:text-3xl sm:text-5xl lg:text-[62px] text-white leading-[1.15] sm:leading-[1.1] font-extrabold tracking-tight mb-3 sm:mb-5 drop-shadow-md">
                     <span class="italic block">LiFePO4 & Sodium-Ion</span>
                     <span class="italic font-['Playfair_Display',serif] font-semibold block text-slate-100">Battery Systems</span>
                 </h1>
 
-                <p class="text-sm sm:text-lg text-white/95 max-w-2xl font-normal leading-relaxed drop-shadow">
+                <p class="text-xs sm:text-base lg:text-lg text-white/90 sm:text-white/95 max-w-xl sm:max-w-2xl font-normal leading-relaxed drop-shadow">
                     Explore Cleanergy Battery’s 12V, 24V and 51.2V battery systems for marine, RV, golf cart, solar, home energy storage and off-grid power applications.🚤
                 </p>
             </div>
