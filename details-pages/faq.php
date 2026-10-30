@@ -8,9 +8,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700;1,800;1,900&family=Playfair+Display:ital,wght@1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../dist/output.css?v=<?= filemtime(__DIR__ . '/../dist/output.css') ?>">
+    <link rel="stylesheet" href="/dist/output.css?v=<?= filemtime(__DIR__ . '/../dist/output.css') ?>">
 </head>
-<body class="bg-white font-['Plus_Jakarta_Sans',sans-serif] text-slate-900 min-h-screen flex flex-col justify-between">
+<body class="bg-white font-['Plus_Jakarta_Sans',sans-serif] text-slate-900 min-h-screen flex flex-col justify-between overflow-x-hidden max-w-full">
 
     <?php
     // Include Fixed Floating Navbar
@@ -94,7 +94,7 @@
 
         <!-- Big Centered "FAQs" Heading (Exact PDF Match) -->
         <div class="relative z-10 px-4 pt-16">
-            <h1 class="text-5xl sm:text-7xl lg:text-8xl font-black text-white tracking-wide drop-shadow-[0_4px_16px_rgba(0,0,0,0.5)]">
+            <h1 class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white tracking-wide drop-shadow-[0_4px_16px_rgba(0,0,0,0.5)]">
                 FAQs
             </h1>
         </div>

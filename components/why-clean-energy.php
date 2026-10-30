@@ -7,7 +7,7 @@
             <div class="overflow-hidden rounded-3xl shadow-lg border border-slate-100">
                 <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=1200&q=80" 
                      alt="Golf Carts Fleet Powered by Cleanergy" 
-                     class="w-full h-[380px] sm:h-[460px] lg:h-[520px] object-cover hover:scale-105 transition-transform duration-500">
+                     class="w-full h-[260px] sm:h-[400px] lg:h-[520px] object-cover hover:scale-105 transition-transform duration-500">
             </div>
 
             <!-- Right Column: Content & Features -->

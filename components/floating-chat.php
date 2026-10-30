@@ -3,7 +3,7 @@
 ?>
 
 <!-- Floating Quick Contact Widget -->
-<div id="floating-contact-widget" class="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-[9990] flex flex-col items-center">
+<div id="floating-contact-widget" class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-[9990] flex flex-col items-center">
     
     <!-- Slide-Up Speed Dial Buttons (Call & Mail Circular Icons Only) -->
     <div id="floating-contact-menu" 
@@ -13,7 +13,7 @@
         <a href="tel:+17347875246" 
            title="Call: +1 (734) 787-5246"
            aria-label="Call Us"
-           class="w-12 h-12 rounded-full bg-[#12b3d6] hover:bg-[#0ea5e9] text-white shadow-lg flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95 cursor-pointer">
+           class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#12b3d6] hover:bg-[#0ea5e9] text-white shadow-lg flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95 cursor-pointer">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
             </svg>
@@ -23,7 +23,7 @@
         <a href="mailto:customercare@cleanergy.us" 
            title="Mail: customercare@cleanergy.us"
            aria-label="Mail Us"
-           class="w-12 h-12 rounded-full bg-[#12b3d6] hover:bg-[#0ea5e9] text-white shadow-lg flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95 cursor-pointer">
+           class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#12b3d6] hover:bg-[#0ea5e9] text-white shadow-lg flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95 cursor-pointer">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
             </svg>
@@ -36,7 +36,7 @@
             id="floating-contact-btn" 
             onclick="toggleFloatingContact()" 
             aria-label="Contact Us Options" 
-            class="w-14 h-14 rounded-full bg-[#12b3d6] hover:bg-[#0ea5e9] text-white shadow-xl hover:shadow-cyan-500/35 flex items-center justify-center transition-all duration-300 active:scale-95 cursor-pointer focus:outline-none">
+            class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#12b3d6] hover:bg-[#0ea5e9] text-white shadow-xl hover:shadow-cyan-500/35 flex items-center justify-center transition-all duration-300 active:scale-95 cursor-pointer focus:outline-none">
         
         <!-- Chat Icon (Default) -->
         <svg id="floating-chat-icon" class="w-5 h-5 sm:w-6 sm:h-6 transition-all duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">

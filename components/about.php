@@ -22,7 +22,7 @@
                 <div class="overflow-hidden rounded-3xl shadow-lg border border-slate-100">
                     <img src="./assets/img/banner3.jpg" 
                          alt="Cleanergy Marine and Harbor Solutions" 
-                         class="w-full h-[380px] sm:h-[460px] lg:h-[500px] object-cover hover:scale-105 transition-transform duration-500">
+                         class="w-full h-[260px] sm:h-[400px] lg:h-[500px] object-cover hover:scale-105 transition-transform duration-500">
                 </div>
             </div>
 
@@ -32,7 +32,7 @@
                 <div class="overflow-hidden rounded-3xl shadow-lg border border-slate-100">
                     <img src="./assets/img/banner1.jpg" 
                          alt="Yacht and Marine Battery Power" 
-                         class="w-full h-[260px] sm:h-[320px] object-cover hover:scale-105 transition-transform duration-500">
+                         class="w-full h-[220px] sm:h-[280px] lg:h-[320px] object-cover hover:scale-105 transition-transform duration-500">
                 </div>
 
                 <!-- Text Paragraphs -->

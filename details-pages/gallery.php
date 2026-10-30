@@ -102,8 +102,8 @@
 
         @media (max-width: 640px) {
             .gallery-preview-image {
-                max-width: 80vw;
-                max-height: 80vh;
+                max-width: 92vw;
+                max-height: 82vh;
                 border-radius: 10px;
             }
 
@@ -139,7 +139,7 @@
     </style>
 </head>
 
-<body class="bg-white font-['Plus_Jakarta_Sans',sans-serif] text-slate-900 min-h-screen flex flex-col justify-between">
+<body class="bg-white font-['Plus_Jakarta_Sans',sans-serif] text-slate-900 min-h-screen flex flex-col justify-between overflow-x-hidden max-w-full">
 
 <?php
 // Include fixed floating navbar
@@ -166,7 +166,7 @@ $gallery_items = load_gallery_items();
             <span class="inline-block text-[11px] sm:text-sm font-bold tracking-[0.2em] text-[#38bdf8] uppercase mb-3 drop-shadow">
                 CLEANERGY
             </span>
-            <h1 class="text-5xl sm:text-7xl lg:text-8xl font-black text-white italic tracking-wide drop-shadow-[0_4px_16px_rgba(0,0,0,0.5)]">
+            <h1 class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white italic tracking-wide drop-shadow-[0_4px_16px_rgba(0,0,0,0.5)]">
                 Our Gallery
             </h1>
         </div>

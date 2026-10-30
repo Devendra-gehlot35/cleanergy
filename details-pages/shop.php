@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700;1,800;1,900&family=Playfair+Display:ital,wght@1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/dist/output.css?v=<?= filemtime(__DIR__ . '/../dist/output.css') ?>">
 </head>
-<body class="bg-white font-['Plus_Jakarta_Sans',sans-serif] text-slate-900 min-h-screen flex flex-col justify-between">
+<body class="bg-white font-['Plus_Jakarta_Sans',sans-serif] text-slate-900 min-h-screen flex flex-col justify-between overflow-x-hidden max-w-full">
 
     <?php
     // Include Fixed Floating Navbar
@@ -260,9 +260,9 @@
                 <?php endif; ?>
             </div>
 
-            <!-- Horizontal Collection Filter Bar (Centered) -->
-            <div class="mb-8 flex justify-center">
-                <div class="flex items-center justify-center flex-wrap gap-2 sm:gap-2.5 pb-2 pt-1">
+            <!-- Horizontal Collection Filter Bar (Scrollable on Mobile, Centered on Tablet/Desktop) -->
+            <div class="mb-8 overflow-x-auto scrollbar-none py-1 -mx-4 px-4 sm:mx-0 sm:px-0">
+                <div class="flex items-center sm:justify-center flex-nowrap sm:flex-wrap gap-2 sm:gap-2.5 w-max sm:w-auto mx-auto pb-1">
                     <!-- "All" Tab -->
                     <a href="/shop.php#shop-catalog" 
                        class="shrink-0 whitespace-nowrap px-3.5 sm:px-4 lg:px-4.5 py-2 sm:py-2.5 rounded-full text-xs sm:text-[13px] lg:text-sm font-bold transition-all shadow-xs <?= (empty($selectedCollection) && empty($searchQuery)) ? 'bg-[#00a8cc] text-white shadow-xs' : 'bg-[#f0f7fa] hover:bg-[#e2f3f8] text-slate-800' ?>">
@@ -420,8 +420,16 @@
                 </p>
             </div>
 
+            <!-- Mobile Horizontal Scroll Indicator -->
+            <div class="flex items-center justify-end gap-1.5 text-xs text-slate-500 mb-2 sm:hidden">
+                <svg class="w-4 h-4 text-cyan-600 animate-pulse" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                </svg>
+                <span>Swipe table horizontally to compare →</span>
+            </div>
+
             <!-- Comparison Table Container -->
-            <div class="w-full overflow-x-auto rounded-2xl sm:rounded-3xl shadow-sm border border-slate-200/80 bg-white">
+            <div class="w-full overflow-x-auto scrollbar-none rounded-2xl sm:rounded-3xl shadow-sm border border-slate-200/80 bg-white">
                 <table class="w-full text-left border-collapse min-w-[740px]">
                     <!-- Table Header -->
                     <thead class="bg-[#0f172a] text-white text-xs sm:text-sm font-semibold">

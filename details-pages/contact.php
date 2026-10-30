@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700;1,800;1,900&family=Playfair+Display:ital,wght@1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/dist/output.css?v=<?= filemtime(__DIR__ . '/../dist/output.css') ?>">
 </head>
-<body class="bg-white font-['Plus_Jakarta_Sans',sans-serif] text-slate-900 min-h-screen flex flex-col justify-between">
+<body class="bg-white font-['Plus_Jakarta_Sans',sans-serif] text-slate-900 min-h-screen flex flex-col justify-between overflow-x-hidden max-w-full">
 
     <?php
     // Include Fixed Floating Navbar
@@ -30,7 +30,7 @@
 
         <!-- Big Centered "Contact Us" Title (Exact PDF Match) -->
         <div class="relative z-10 px-4 pt-16">
-            <h1 class="text-5xl sm:text-7xl lg:text-8xl font-black text-white italic tracking-wide drop-shadow-[0_4px_16px_rgba(0,0,0,0.5)]">
+            <h1 class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white italic tracking-wide drop-shadow-[0_4px_16px_rgba(0,0,0,0.5)]">
                 Contact Us
             </h1>
         </div>
@@ -177,7 +177,7 @@
                 </div>
 
                 <!-- Google Map Responsive Iframe Container -->
-                <div class="w-full h-[380px] sm:h-[460px] rounded-3xl overflow-hidden shadow-lg border border-slate-100">
+                <div class="w-full h-[280px] sm:h-[420px] lg:h-[460px] rounded-3xl overflow-hidden shadow-lg border border-slate-100">
                     <iframe 
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2954.1085352349787!2d-83.74317922378906!3d42.22283084310547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x883cae2292f74151%3A0xe5417e0892095f36!2s4750%20Venture%20Dr%20%23400%2C%20Ann%20Arbor%2C%20MI%2048108!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" 
                         class="w-full h-full border-0" 

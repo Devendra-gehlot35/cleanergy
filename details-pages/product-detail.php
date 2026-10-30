@@ -25,7 +25,7 @@ $similarProducts = array_slice($similarProducts, 0, 4);
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/dist/output.css?v=<?= filemtime(__DIR__ . '/../dist/output.css') ?>">
 </head>
-<body class="bg-white font-['Plus_Jakarta_Sans',sans-serif] text-slate-900 min-h-screen flex flex-col justify-between">
+<body class="bg-white font-['Plus_Jakarta_Sans',sans-serif] text-slate-900 min-h-screen flex flex-col justify-between overflow-x-hidden max-w-full">
 
     <?php
     // Include Fixed Floating Navbar
@@ -53,7 +53,7 @@ $similarProducts = array_slice($similarProducts, 0, 4);
                 <!-- Left Column: Gallery & Thumbnails (lg: 6 cols) -->
                 <div class="lg:col-span-6">
                     <!-- Main Showcase Card -->
-                    <div class="relative rounded-3xl p-4 sm:p-6 bg-[#f8fafc] border border-slate-200 flex items-center justify-center h-[380px] sm:h-[460px] lg:h-[500px] overflow-hidden group">
+                    <div class="relative rounded-3xl p-4 sm:p-6 bg-[#f8fafc] border border-slate-200 flex items-center justify-center h-[280px] sm:h-[420px] lg:h-[500px] overflow-hidden group">
                         
                         <!-- IN STOCK Badge (Top Left - Matching PDF) -->
                         <span class="absolute top-5 left-5 px-3.5 py-1.5 rounded-full text-[11px] font-extrabold uppercase tracking-wider text-white shadow-xs z-10" style="background-color: <?= $product['in_stock'] ? '#239B52' : '#DC3545' ?>;">
@@ -155,8 +155,8 @@ $similarProducts = array_slice($similarProducts, 0, 4);
 
             <!-- Tab Navigation & Content (Description, Specifications, Features, Applications) -->
             <div class="border-t border-slate-100 pt-10 sm:pt-12 mb-16 sm:mb-20">
-                <!-- Tab Buttons Row -->
-                <div class="flex flex-wrap items-center gap-2 sm:gap-3 mb-8">
+                <!-- Tab Buttons Row (Touch scrollable on mobile, wrapped on larger screens) -->
+                <div class="flex items-center gap-2 sm:gap-3 mb-8 overflow-x-auto scrollbar-none pb-2 sm:flex-wrap">
                     <button type="button" onclick="switchTab(this, 'tab-desc')" 
                             class="tab-btn px-6 py-2 rounded-full text-sm font-bold transition-all cursor-pointer bg-[#dcfce7] text-[#166534]">
                         Description

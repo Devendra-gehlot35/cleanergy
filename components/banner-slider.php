@@ -159,6 +159,26 @@
             startTimer();
         }
 
+        // Mobile Touch Swipe Handling
+        let touchStartX = 0;
+        let touchEndX = 0;
+        track?.addEventListener('touchstart', function(e) {
+            touchStartX = e.touches[0].clientX;
+        }, { passive: true });
+
+        track?.addEventListener('touchend', function(e) {
+            touchEndX = e.changedTouches[0].clientX;
+            const diffX = touchStartX - touchEndX;
+            if (Math.abs(diffX) > 45) {
+                if (diffX > 0) {
+                    goToSlide(activeIdx + 1); // Swipe left -> Next
+                } else {
+                    goToSlide(activeIdx - 1); // Swipe right -> Previous
+                }
+                resetTimer();
+            }
+        }, { passive: true });
+
         dots.forEach(dot => {
             dot.addEventListener('click', () => {
                 const idx = parseInt(dot.getAttribute('data-slide') || '0', 10);

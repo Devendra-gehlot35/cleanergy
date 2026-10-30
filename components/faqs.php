@@ -141,7 +141,7 @@ $faqs = [
                 <div class="overflow-hidden rounded-3xl shadow-lg border border-slate-100 w-full h-full">
                     <img src="./assets/yacht-faq.png" 
                          alt="Cleanergy Marine Power and LiFePO4 Battery" 
-                         class="w-full h-full min-h-[440px] sm:min-h-[520px] lg:min-h-[580px] object-cover hover:scale-105 transition-transform duration-500">
+                         class="w-full h-full min-h-[260px] sm:min-h-[380px] lg:min-h-[580px] object-cover hover:scale-105 transition-transform duration-500">
                 </div>
             </div>
 

@@ -217,17 +217,23 @@ $article['image'] = formatBlogImg($article['image'] ?? '');
             margin-bottom: 0.5rem;
             line-height: 1.7;
             color: #334155;
-        }
         .blog-detailed-content table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 2rem;
             margin-bottom: 2.5rem;
             border-radius: 0.75rem;
-            overflow: hidden;
             border: 1px solid #e2e8f0;
             font-size: 0.95rem;
-            display: table;
+            display: block;
+            max-width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        .blog-detailed-content img, .blog-detailed-content iframe, .blog-detailed-content video {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.75rem;
         }
         .blog-detailed-content th {
             background-color: #f8fafc;
@@ -267,7 +273,7 @@ $article['image'] = formatBlogImg($article['image'] ?? '');
         }
     </style>
 </head>
-<body class="bg-white font-['Plus_Jakarta_Sans',sans-serif] text-slate-900 min-h-screen flex flex-col justify-between">
+<body class="bg-white font-['Plus_Jakarta_Sans',sans-serif] text-slate-900 min-h-screen flex flex-col justify-between overflow-x-hidden max-w-full">
 
     <?php
     // Include Fixed Floating Navbar

@@ -16,7 +16,7 @@
         }
     </style>
 </head>
-<body class="bg-white font-['Plus_Jakarta_Sans',sans-serif] text-slate-900 min-h-screen flex flex-col justify-between">
+<body class="bg-white font-['Plus_Jakarta_Sans',sans-serif] text-slate-900 min-h-screen flex flex-col justify-between overflow-x-hidden max-w-full">
 
     <?php
     // Include Fixed Floating Navbar
@@ -80,7 +80,7 @@
                         <div class="overflow-hidden rounded-3xl shadow-lg border border-slate-100">
                             <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1000&q=80" 
                                  alt="Cleanergy Battery Technician Working on Power System" 
-                                 class="w-full h-[380px] sm:h-[460px] lg:h-[500px] object-cover hover:scale-105 transition-transform duration-500">
+                                 class="w-full h-[260px] sm:h-[400px] lg:h-[500px] object-cover hover:scale-105 transition-transform duration-500">
                         </div>
                     </div>
 
@@ -90,7 +90,7 @@
                         <div class="overflow-hidden rounded-3xl shadow-lg border border-slate-100">
                             <img src="/assets/img/banner2.jpg" 
                                  alt="Luxury Yacht Marine Power Solutions" 
-                                 class="w-full h-[260px] sm:h-[320px] object-cover hover:scale-105 transition-transform duration-500">
+                                 class="w-full h-[220px] sm:h-[280px] lg:h-[320px] object-cover hover:scale-105 transition-transform duration-500">
                         </div>
 
                         <!-- 3 Text Paragraphs matching PDF verbatim -->
@@ -203,7 +203,7 @@
                     Explore Cleanergy Battery's advanced LiFePO4 and sodium-ion battery systems designed for reliable power, long service life and demanding applications.
                 </p>
                 <div class="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6">
-                    <a href="/details-pages/shop.php" 
+                    <a href="/shop.php" 
                        class="inline-flex items-center justify-center px-8 sm:px-10 py-3.5 sm:py-4 rounded-full bg-[#41aa57] hover:bg-[#36954b] text-white font-bold text-sm sm:text-base shadow-sm transition-all duration-200">
                         Shop LiFePO4 Now
                     </a>
