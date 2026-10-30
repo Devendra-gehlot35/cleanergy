@@ -231,8 +231,10 @@ if ($status === 'added') {
         <div class="max-w-5xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
             <div class="flex items-center gap-3">
                 <a href="index.php" class="flex items-center">
-                    <img src="https://cleanergybattery.com/cdn/shop/files/Logo-of-cleanergy-transparent_f56c8e49-d76a-482d-bf49-716e5b7c4da5.png?height=160&v=1784631413" 
+                    <img src="/assets/img/logo.png" 
                          alt="Cleanergy" 
+                         width="320"
+                         height="160"
                          class="h-7 w-auto object-contain">
                 </a>
                 <span class="text-slate-300">/</span>

@@ -12,10 +12,14 @@ function isNavActive($path, $current) {
     <div class="max-w-7xl mx-auto bg-white/95 backdrop-blur-md text-slate-800 rounded-xl sm:rounded-2xl shadow-xl shadow-black/10 border border-slate-100 px-3.5 sm:px-8 md:px-10 lg:px-12 py-2 sm:py-2.5 md:py-3 flex items-center justify-between pointer-events-auto transition-all duration-300">
         
         <!-- Logo -->
-        <a href="/" class="flex items-center group">
-            <img src="https://cleanergybattery.com/cdn/shop/files/Logo-of-cleanergy-transparent_f56c8e49-d76a-482d-bf49-716e5b7c4da5.png?height=160&v=1784631413" 
+        <a href="/" class="flex items-center group shrink-0">
+            <img src="/assets/img/logo.png" 
                  alt="Cleanergy Battery Logo" 
-                 class="h-[46px] sm:h-[64px] md:h-[72px] w-auto object-contain transition-transform group-hover:scale-105">
+                 width="320"
+                 height="160"
+                 class="h-[46px] sm:h-[64px] md:h-[72px] w-auto object-contain transition-transform group-hover:scale-105"
+                 loading="eager"
+                 fetchpriority="high">
         </a>
 
         <!-- Desktop Navigation Links on the Right Side -->

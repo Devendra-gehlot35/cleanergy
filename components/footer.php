@@ -10,9 +10,12 @@
                 <div>
                     <!-- Logo -->
                     <a href="/" class="inline-block mb-4">
-                        <img src="https://cleanergybattery.com/cdn/shop/files/Logo-of-cleanergy-transparent_f56c8e49-d76a-482d-bf49-716e5b7c4da5.png?height=160&v=1784631413" 
+                        <img src="/assets/img/logo.png" 
                              alt="Cleanergy Battery Logo" 
-                             class="h-[62px] sm:h-[78px] w-auto object-contain">
+                             width="320"
+                             height="160"
+                             class="h-[62px] sm:h-[78px] w-auto object-contain"
+                             loading="lazy">
                     </a>
 
                     <!-- Description -->
