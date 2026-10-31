@@ -148,7 +148,7 @@
                 </div>
 
                 <!-- Main Heading (Centered with Cyan Highlights) -->
-                <h2 class="text-2xl sm:text-3xl lg:text-[36px] font-extrabold text-slate-900 leading-tight tracking-tight mb-4">
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 leading-tight tracking-tight mb-4">
                     Find the Right LiFePO4 or Sodium-Ion Battery for 
                     <span class="text-[#12b3d6]">Your Boat, RV, Home Solar System or Off-Grid Setup</span>
                 </h2>
@@ -166,11 +166,6 @@
                          class="cursor-pointer bg-white rounded-3xl border-[1.5px] border-[#a5e4f4] p-7 sm:p-8 flex flex-col justify-between shadow-xs hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group">
                         
                         <div>
-                            <!-- Icon Square Badge (Soft Cyan Tint matching PDF) -->
-                            <div class="w-16 h-16 rounded-2xl bg-[#a2d2df] flex items-center justify-center mb-6 shadow-xs group-hover:scale-105 transition-transform duration-300">
-                                <?= $item['icon_svg'] ?>
-                            </div>
-
                             <!-- Card Title -->
                             <h3 class="font-extrabold text-slate-900 text-lg sm:text-xl leading-snug mb-3 group-hover:text-[#12b3d6] transition-colors">
                                 <a href="<?= htmlspecialchars($item['link']) ?>" onclick="event.stopPropagation();">

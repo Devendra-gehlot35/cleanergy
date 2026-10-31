@@ -51,7 +51,7 @@ $faqs = [
                 </div>
 
                 <!-- Main Heading -->
-                <h2 class="text-2xl sm:text-3xl lg:text-[34px] font-extrabold text-slate-900 leading-[1.25] tracking-tight mb-2">
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 leading-tight tracking-tight mb-2">
                     Expert Answers to Common <br>
                     <span class="text-[#8bbd9f]">Battery Questions</span>
                 </h2>

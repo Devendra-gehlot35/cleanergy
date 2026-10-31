@@ -2,7 +2,7 @@
 <section id="selection-help" class="w-full bg-white py-8 sm:py-12 overflow-hidden">
     <!-- 100% Full Width Card with Zero Left/Right Margin and Rounded Corners -->
     <div class="w-full bg-[#cbf4d8] rounded-3xl sm:rounded-[36px] py-14 sm:py-20 px-4 sm:px-8 text-center shadow-xs">
-        <h3 class="text-2xl sm:text-3xl lg:text-[34px] font-extrabold text-slate-900 tracking-tight leading-snug">
+        <h3 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
             Not sure which battery is <span class="text-[#4e9e69]">right for your application?</span>
         </h3>
         <p class="text-slate-700 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto mt-4 mb-8 leading-relaxed font-normal">

@@ -139,7 +139,7 @@ $applications = [
                 </div>
 
                 <!-- Main Heading -->
-                <h2 class="text-2xl sm:text-3xl lg:text-[36px] font-extrabold text-slate-900 leading-tight tracking-tight ">
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 leading-tight tracking-tight">
                     Battery Solutions for
                     <span class=" block text-[#12b3d6]">Every Power Need</span>
                 </h2>
@@ -151,19 +151,14 @@ $applications = [
             </div>
         </div>
 
-        <!-- Applications Cards Grid (Looping dynamically from $applications array) -->
+        <!-- Applications Cards Grid (Showing top 6 applications on homepage) -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16">
-            <?php foreach ($applications as $app): ?>
+            <?php foreach (array_slice($applications, 0, 6) as $app): ?>
                 <div onclick="window.location.href='<?= htmlspecialchars($app['link_url']) ?>'" class="cursor-pointer relative bg-white rounded-2xl border border-[#7dd3fc]/80 hover:border-[#12b3d6] p-6 sm:p-8 flex flex-col justify-between shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group overflow-hidden">
                     <!-- Top Accent Line on Hover (Matching Button Color) -->
                     <div class="absolute top-0 left-0 right-0 h-1.5 bg-transparent group-hover:bg-[#12b3d6] transition-all duration-300"></div>
 
                     <div>
-                        <!-- Icon Badge -->
-                        <div class="w-14 h-14 rounded-2xl bg-[#e6f7ef] flex items-center justify-center mb-6 shadow-xs group-hover:scale-105 transition-transform">
-                            <?php echo $app['icon_svg']; ?>
-                        </div>
-
                         <!-- Title -->
                         <h3 class="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-[#0284c7] transition-colors mb-2.5">
                             <a href="<?php echo htmlspecialchars($app['link_url']); ?>">

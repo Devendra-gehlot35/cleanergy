@@ -18,7 +18,7 @@
                 </div>
 
                 <!-- Main Split Heading -->
-                <h2 class="text-2xl sm:text-3xl lg:text-[34px] font-extrabold text-slate-900 leading-[1.28] tracking-tight mb-4">
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 leading-tight tracking-tight mb-4">
                     Advanced Batteries Built for 
                     <span class="text-[#12b3d6]">Reliable, Long-Term Performance</span>
                 </h2>

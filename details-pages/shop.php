@@ -384,7 +384,7 @@
 
                             <!-- Buttons Row (Buy Now & Enquiry) -->
                             <div class="flex items-center gap-2.5 mt-auto pt-1">
-                                <a href="<?= $safeDetailUrl ?>" class="flex-1 py-2.5 px-4 rounded-full bg-[#239B52] hover:bg-[#1e8244] text-white text-center font-bold text-xs sm:text-sm transition-colors shadow-sm">
+                                <a href="/checkout.php?id=<?= (int)$prod['id'] ?>" class="flex-1 py-2.5 px-4 rounded-full bg-[#239B52] hover:bg-[#1e8244] text-white text-center font-bold text-xs sm:text-sm transition-colors shadow-sm">
                                     Buy Now
                                 </a>
                                 <a href="/index.php#contact" 
@@ -411,7 +411,7 @@
                     BATTERY COMPARISON
                 </span>
                 
-                <h2 class="text-2xl sm:text-4xl lg:text-[42px] font-extrabold text-slate-900 leading-tight tracking-tight mb-4">
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 leading-tight tracking-tight mb-4">
                     Compare Cleanergy Battery Models
                 </h2>
 

@@ -30,7 +30,7 @@ if (empty($blogs)) {
             </div>
 
             <!-- Main Heading with Split Color -->
-            <h2 class="text-2xl sm:text-3xl lg:text-[34px] font-extrabold text-slate-900 leading-tight tracking-tight mb-3">
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 leading-tight tracking-tight mb-3">
                 Latest Battery Guides and <span class="text-[#12b3d6]">Technical Insights</span>
             </h2>
 

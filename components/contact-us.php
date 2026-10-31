@@ -7,7 +7,7 @@
             <!-- Row 1 Left: Smarter Upgrade Card -->
             <div class="bg-[#d7f3fb] rounded-[28px] sm:rounded-[36px] flex flex-col justify-center shadow-sm" 
                  style="padding: clamp(28px, 4.5vw, 56px);">
-                <h3 class="text-2xl sm:text-3xl lg:text-[34px] font-extrabold text-slate-900 leading-[1.25] tracking-tight mb-5">
+                <h3 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 leading-tight tracking-tight mb-5">
                     Why LiFePO4 Batteries Are a <span class="text-[#12b3d6]">Smarter<br class="hidden sm:inline"> Upgrade Over Lead-Acid</span>
                 </h3>
                 <p class="text-slate-700 text-sm sm:text-base lg:text-[16.5px] leading-relaxed">
@@ -34,7 +34,7 @@
                 <!-- Applications Card -->
                 <div class="bg-[#d7f3fb] rounded-[28px] sm:rounded-[36px] flex-1 flex flex-col justify-center shadow-sm" 
                      style="padding: clamp(28px, 4.5vw, 56px);">
-                    <h3 class="text-2xl sm:text-3xl lg:text-[34px] font-extrabold text-slate-900 leading-[1.25] tracking-tight mb-5">
+                    <h3 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 leading-tight tracking-tight mb-5">
                         Best Applications for <span class="text-[#12b3d6]">LiFePO4 Batteries</span>
                     </h3>
                     <p class="text-slate-700 text-sm sm:text-base lg:text-[16.5px] leading-relaxed">

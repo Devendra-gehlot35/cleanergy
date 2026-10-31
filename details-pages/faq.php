@@ -110,7 +110,7 @@
                 </div>
 
                 <!-- Main Heading (Centered) -->
-                <h2 class="text-2xl sm:text-3xl lg:text-[40px] font-extrabold text-slate-900 leading-tight tracking-tight mb-4">
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 leading-tight tracking-tight mb-4">
                     Expert Answers to Common <br>
                     <span style="color: #92cca3;">Battery Questions</span>
                 </h2>

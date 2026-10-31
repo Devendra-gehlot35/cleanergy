@@ -35,7 +35,7 @@ $lead_acid_points = [
             </div>
 
             <!-- Main Heading with Split Color -->
-            <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 leading-tight tracking-tight mb-3">
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 leading-tight tracking-tight mb-3">
                 LiFePO4 vs Lead-Acid Batteries: <span class="text-[#82b89a] font-extrabold">Which Is Better?</span>
             </h2>
 

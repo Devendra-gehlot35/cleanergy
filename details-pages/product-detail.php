@@ -234,7 +234,7 @@ $similarProducts = array_slice($similarProducts, 0, 4);
                 
                 <!-- Section Header -->
                 <div class="mb-10 sm:mb-12">
-                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mb-2">
+                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 leading-tight tracking-tight mb-2">
                          LiFePO4 and <span style="color: #239B52;">Sodium Ion Batteries</span> You May Like
                     </h2>
 
@@ -278,7 +278,7 @@ $similarProducts = array_slice($similarProducts, 0, 4);
 
                             <!-- Buttons: Buy Now & Details -->
                             <div class="flex items-center gap-2 pt-1">
-                                <a href="<?= htmlspecialchars($simUrl) ?>" class="flex-1 py-2 px-3 rounded-full text-white text-xs font-bold text-center transition-colors shadow-xs bg-[#239B52] hover:bg-[#1e8244]">
+                                <a href="/checkout.php?id=<?= (int)$sim['id'] ?>" class="flex-1 py-2 px-3 rounded-full text-white text-xs font-bold text-center transition-colors shadow-xs bg-[#239B52] hover:bg-[#1e8244]">
                                     Buy Now
                                 </a>
                                 <a href="<?= htmlspecialchars($simUrl) ?>" class="flex-1 py-2 px-3 rounded-full border border-[#239B52] text-[#239B52] hover:bg-emerald-50 text-center text-xs font-bold transition-colors">
@@ -432,9 +432,11 @@ $similarProducts = array_slice($similarProducts, 0, 4);
         if (activePane) activePane.classList.remove('hidden');
     }
 
-    // Buy Now Handler
+    // Buy Now Handler -> Navigates to dedicated Checkout Page with Product & Quantity
     function handleBuyNow() {
-        openEnquiryModal('<?= htmlspecialchars(addslashes($product['title'])) ?>', '<?= htmlspecialchars($product['image']) ?>');
+        const qtyEl = document.getElementById('product-qty');
+        const qty = qtyEl ? qtyEl.innerText.trim() : '1';
+        window.location.href = '/checkout.php?id=<?= (int)$product['id'] ?>&qty=' + encodeURIComponent(qty);
     }
     const handleAddToCart = handleBuyNow;
 

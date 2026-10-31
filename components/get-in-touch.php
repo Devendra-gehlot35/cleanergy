@@ -76,7 +76,7 @@
                 </div>
 
                 <!-- Main Heading -->
-                <h2 class="text-xl sm:text-2xl lg:text-[28px] font-extrabold text-slate-900 leading-[1.25] tracking-tight mb-2">
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 leading-tight tracking-tight mb-2">
                     Talk to a Battery <span class="text-[#82b89a]">Expert Today</span>
                 </h2>
 

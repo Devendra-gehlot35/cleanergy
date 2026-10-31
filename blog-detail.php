@@ -340,7 +340,7 @@ $article['image'] = formatBlogImg($article['image'] ?? '');
                 <div class="space-y-8 sm:space-y-10">
                     <?php foreach ($article['sections'] as $sec): ?>
                         <div>
-                            <h2 class="text-2xl sm:text-3xl lg:text-[34px] font-extrabold text-slate-900 tracking-tight mb-4 leading-tight">
+                            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight mb-4 leading-tight">
                                 <?= htmlspecialchars($sec['heading']) ?>
                             </h2>
                             

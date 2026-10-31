@@ -28,7 +28,7 @@ $products = array_slice(array_values($all_products), 0, 4);
             </div>
 
             <!-- Main Heading -->
-            <h2 class="text-2xl sm:text-3xl lg:text-[38px] font-extrabold text-slate-900 leading-tight tracking-tight mb-4">
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 leading-tight tracking-tight mb-4">
 
                LiFePO4 & Sodium-Ion Batteries 
 
@@ -160,7 +160,7 @@ $products = array_slice(array_values($all_products), 0, 4);
 
                                 <!-- Buy Now -->
                                 <a
-                                    href="<?= $safeUrl ?>"
+                                    href="/checkout.php?id=<?= (int)$product['id'] ?>"
                                     class="flex-1 py-2.5 px-3 rounded-full bg-[#41aa57] hover:bg-[#36954b] text-white text-xs sm:text-sm font-semibold transition-colors text-center"
                                 >
 
