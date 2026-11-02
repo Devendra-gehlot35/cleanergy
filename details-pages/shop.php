@@ -188,8 +188,8 @@
     $products = $filteredProducts;
     ?>
 
-    <!-- 1. Hero Banner (Top Image matching all other pages) -->
-    <section class="relative w-full min-h-[580px] sm:min-h-[660px] h-[92vh] sm:h-screen max-h-[1000px] overflow-hidden bg-slate-900 flex items-center">
+    <!-- 1. Hero Banner (Full Screen on Mobile & Desktop) -->
+    <section class="relative w-full h-screen min-h-screen h-[100dvh] min-h-[100dvh] overflow-hidden bg-slate-900 flex items-center" style="min-height: 100vh; min-height: 100dvh; height: 100vh; height: 100dvh;">
         <!-- Background Image Edge-to-Edge -->
         <img src="/assets/img/banner2.jpg" 
              alt="Clean Energy Battery Shop Banner" 

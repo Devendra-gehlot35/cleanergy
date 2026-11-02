@@ -17,8 +17,8 @@
     include __DIR__ . '/../components/navbar.php';
     ?>
 
-    <!-- 1. Hero Banner (Natural Image without Blue Overlay) -->
-    <section class="relative w-full min-h-[580px] sm:min-h-[660px] h-[92vh] sm:h-screen max-h-[1000px] overflow-hidden flex items-center justify-center text-center bg-slate-900">
+    <!-- 1. Hero Banner (Full Screen on Mobile & Desktop) -->
+    <section class="relative w-full h-screen min-h-screen h-[100dvh] min-h-[100dvh] overflow-hidden flex items-center justify-center text-center bg-slate-900" style="min-height: 100vh; min-height: 100dvh; height: 100vh; height: 100dvh;">
         
         <!-- Clean Background Image (No blue tint / overlay) -->
         <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2070&q=80" 

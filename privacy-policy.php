@@ -16,8 +16,8 @@
     include __DIR__ . '/components/navbar.php';
     ?>
 
-    <!-- 1. Hero Banner (Exact Same Size, Image & Full-Bleed Layout as Homepage & Other Pages) -->
-    <section class="relative w-full min-h-[580px] sm:min-h-[660px] h-[92vh] sm:h-screen max-h-[1000px] overflow-hidden bg-slate-900 flex items-center justify-center text-center">
+    <!-- 1. Hero Banner (Full Screen on Mobile & Desktop) -->
+    <section class="relative w-full h-screen min-h-screen h-[100dvh] min-h-[100dvh] overflow-hidden bg-slate-900 flex items-center justify-center text-center" style="min-height: 100vh; min-height: 100dvh; height: 100vh; height: 100dvh;">
         <!-- Background Image Edge-to-Edge -->
         <img src="/assets/img/banner1.jpg" 
              alt="Clean Energy Privacy Policy Banner" 

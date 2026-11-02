@@ -150,8 +150,8 @@ require_once __DIR__ . '/../data/gallery_loader.php';
 $gallery_items = load_gallery_items();
 ?>
 
-    <!-- 1. Hero Banner (Exact Same Size, Image & Layout as Contact Us, About Us & Shop Pages) -->
-    <section class="relative w-full min-h-[580px] sm:min-h-[660px] h-[92vh] sm:h-screen max-h-[1000px] overflow-hidden flex items-center justify-center text-center bg-slate-900">
+    <!-- 1. Hero Banner (Full Screen on Mobile & Desktop) -->
+    <section class="relative w-full h-screen min-h-screen h-[100dvh] min-h-[100dvh] overflow-hidden flex items-center justify-center text-center bg-slate-900" style="min-height: 100vh; min-height: 100dvh; height: 100vh; height: 100dvh;">
         
         <!-- Clean Background Image -->
         <img src="/assets/img/blog-fishing-boat-trolling.webp" 

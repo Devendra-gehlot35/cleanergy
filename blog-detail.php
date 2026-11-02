@@ -280,8 +280,8 @@ $article['image'] = formatBlogImg($article['image'] ?? '');
     include __DIR__ . '/components/navbar.php';
     ?>
 
-    <!-- 1. Top Banner (Exact Same Size as Contact Us and All Other Pages) -->
-    <section class="relative w-full min-h-[580px] sm:min-h-[660px] h-[92vh] sm:h-screen max-h-[1000px] overflow-hidden bg-slate-900 flex items-center">
+    <!-- 1. Top Banner (Full Screen on Mobile & Desktop) -->
+    <section class="relative w-full h-screen min-h-screen h-[100dvh] min-h-[100dvh] overflow-hidden bg-slate-900 flex items-center" style="min-height: 100vh; min-height: 100dvh; height: 100vh; height: 100dvh;">
         <img src="<?= htmlspecialchars($article['image']) ?>" 
              alt="<?= htmlspecialchars($article['title']) ?>" 
              class="w-full h-full object-cover object-center block">

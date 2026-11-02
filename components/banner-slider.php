@@ -1,23 +1,30 @@
 <!-- 2. Hero Banner Slider (Fully Mobile Responsive) -->
 <style>
-    /* Bulletproof slider sizing — ensures each slide = exactly viewport width */
-    #banner { overflow: hidden; }
-    #hero-slider-track { display: flex; }
+    /* Bulletproof slider sizing — ensures each slide = exactly viewport width & height */
+    #banner { 
+        overflow: hidden; 
+        min-height: 100vh;
+        min-height: 100dvh;
+        height: 100vh;
+        height: 100dvh;
+    }
+    #hero-slider-track { display: flex; height: 100%; }
     #hero-slider-track > .hero-slide {
         width: 100vw;
         min-width: 100vw;
         max-width: 100vw;
         flex: 0 0 100vw;
+        height: 100%;
     }
 </style>
 
-<section id="banner" class="relative w-full h-[70vh] min-h-[400px] sm:min-h-[560px] sm:h-[85vh] lg:h-screen max-h-[1000px] overflow-hidden bg-slate-900">
+<section id="banner" class="relative w-full h-screen min-h-screen h-[100dvh] min-h-[100dvh] overflow-hidden bg-slate-900" style="min-height: 100vh; min-height: 100dvh; height: 100vh; height: 100dvh;">
     
     <!-- Slides Track -->
     <div id="hero-slider-track" class="h-full transition-transform duration-700 ease-in-out will-change-transform">
         
         <!-- Slide 1: Advanced Battery Solutions -->
-        <div class="hero-slide h-full relative flex items-end sm:items-center">
+        <div class="hero-slide h-full relative flex items-center">
             <!-- Background Image -->
             <img src="./assets/img/banner1.jpg" 
                  alt="LiFePO4 and Sodium-Ion Batteries" 
@@ -29,7 +36,7 @@
             <div class="absolute inset-0 bg-black/15"></div>
 
             <!-- Slide Content -->
-            <div class="relative w-full z-10 px-4 sm:px-6 lg:px-8 pb-14 pt-20 sm:pt-28 sm:pb-20 lg:pt-32 lg:pb-24 mx-auto" style="max-width: 80rem;">
+            <div class="relative w-full z-10 px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 pb-16 sm:pb-20 lg:pt-32 lg:pb-24 mx-auto" style="max-width: 80rem;">
                 <div class="w-full sm:max-w-2xl lg:max-w-3xl">
                     <span class="inline-block text-[10px] sm:text-xs lg:text-sm font-bold tracking-[0.15em] sm:tracking-[0.2em] text-white/90 uppercase mb-1.5 sm:mb-3 drop-shadow">
                         ADVANCED BATTERY SOLUTIONS
@@ -57,7 +64,7 @@
         </div>
 
         <!-- Slide 2: Fishing Boat -->
-        <div class="hero-slide h-full relative flex items-end sm:items-center">
+        <div class="hero-slide h-full relative flex items-center">
             <img src="./assets/img/banner2.jpg" 
                  alt="24V Lithium Batteries for Fishing Boats" 
                  class="absolute inset-0 w-full h-full object-cover object-center"
@@ -65,7 +72,7 @@
             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10 sm:bg-gradient-to-r sm:from-slate-950/85 sm:via-slate-900/50 sm:to-transparent"></div>
             <div class="absolute inset-0 bg-black/15"></div>
 
-            <div class="relative w-full z-10 px-4 sm:px-6 lg:px-8 pb-14 pt-20 sm:pt-28 sm:pb-20 lg:pt-32 lg:pb-24 mx-auto" style="max-width: 80rem;">
+            <div class="relative w-full z-10 px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 pb-16 sm:pb-20 lg:pt-32 lg:pb-24 mx-auto" style="max-width: 80rem;">
                 <div class="w-full sm:max-w-2xl lg:max-w-3xl">
                     <span class="inline-block text-[10px] sm:text-xs lg:text-sm font-bold tracking-[0.15em] sm:tracking-[0.2em] text-white/90 uppercase mb-1.5 sm:mb-3 drop-shadow">
                         FISHING BOAT
@@ -93,7 +100,7 @@
         </div>
 
         <!-- Slide 3: Marine Batteries -->
-        <div class="hero-slide h-full relative flex items-end sm:items-center">
+        <div class="hero-slide h-full relative flex items-center">
             <img src="./assets/img/banner3.jpg" 
                  alt="Marine Batteries for Boats and Watercraft" 
                  class="absolute inset-0 w-full h-full object-cover object-center"
@@ -101,7 +108,7 @@
             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10 sm:bg-gradient-to-r sm:from-slate-950/85 sm:via-slate-900/50 sm:to-transparent"></div>
             <div class="absolute inset-0 bg-black/15"></div>
 
-            <div class="relative w-full z-10 px-4 sm:px-6 lg:px-8 pb-14 pt-20 sm:pt-28 sm:pb-20 lg:pt-32 lg:pb-24 mx-auto" style="max-width: 80rem;">
+            <div class="relative w-full z-10 px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 pb-16 sm:pb-20 lg:pt-32 lg:pb-24 mx-auto" style="max-width: 80rem;">
                 <div class="w-full sm:max-w-2xl lg:max-w-3xl">
                     <span class="inline-block text-[10px] sm:text-xs lg:text-sm font-bold tracking-[0.15em] sm:tracking-[0.2em] text-white/90 uppercase mb-1.5 sm:mb-3 drop-shadow">
                         MARINE BATTERIES
@@ -131,7 +138,7 @@
     </div>
 
     <!-- Bottom Slider Dots / Indicators -->
-    <div class="absolute bottom-3 sm:bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-2 sm:gap-2.5 z-20">
+    <div class="absolute bottom-5 sm:bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-2 sm:gap-2.5 z-20">
         <button type="button" class="hero-dot w-6 sm:w-7 h-1.5 sm:h-2 rounded-full bg-white transition-all duration-300" data-slide="0" aria-label="Go to slide 1"></button>
         <button type="button" class="hero-dot w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-white/70 hover:bg-white transition-all duration-300" data-slide="1" aria-label="Go to slide 2"></button>
         <button type="button" class="hero-dot w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-white/70 hover:bg-white transition-all duration-300" data-slide="2" aria-label="Go to slide 3"></button>
