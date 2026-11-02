@@ -16,6 +16,36 @@
         flex: 0 0 100vw;
         height: 100%;
     }
+
+    /* Slider Dots: Exact UI match with smooth expanding pill animation */
+    .hero-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 9999px;
+        background-color: rgba(255, 255, 255, 0.65);
+        transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.35s ease;
+        cursor: pointer;
+        padding: 0;
+        border: none;
+        outline: none;
+        display: inline-block;
+    }
+    .hero-dot:hover {
+        background-color: #ffffff;
+    }
+    .hero-dot.is-active {
+        width: 24px;
+        background-color: #ffffff;
+    }
+    @media (min-width: 640px) {
+        .hero-dot {
+            width: 8px;
+            height: 8px;
+        }
+        .hero-dot.is-active {
+            width: 28px;
+        }
+    }
 </style>
 
 <section id="banner" class="relative w-full h-screen min-h-screen h-[100dvh] min-h-[100dvh] overflow-hidden bg-slate-900" style="min-height: 100vh; min-height: 100dvh; height: 100vh; height: 100dvh;">
@@ -139,9 +169,9 @@
 
     <!-- Bottom Slider Dots / Indicators -->
     <div class="absolute bottom-5 sm:bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-2 sm:gap-2.5 z-20">
-        <button type="button" class="hero-dot w-6 sm:w-7 h-1.5 sm:h-2 rounded-full bg-white transition-all duration-300" data-slide="0" aria-label="Go to slide 1"></button>
-        <button type="button" class="hero-dot w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-white/70 hover:bg-white transition-all duration-300" data-slide="1" aria-label="Go to slide 2"></button>
-        <button type="button" class="hero-dot w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-white/70 hover:bg-white transition-all duration-300" data-slide="2" aria-label="Go to slide 3"></button>
+        <button type="button" class="hero-dot is-active" data-slide="0" aria-label="Go to slide 1"></button>
+        <button type="button" class="hero-dot" data-slide="1" aria-label="Go to slide 2"></button>
+        <button type="button" class="hero-dot" data-slide="2" aria-label="Go to slide 3"></button>
     </div>
 
 </section>
@@ -154,24 +184,13 @@
         let activeIdx = 0;
         let timer = null;
 
-        // Responsive dot sizes
-        const isSmall = window.matchMedia('(max-width: 639px)').matches;
-        const activeDotW = isSmall ? 'w-6' : 'w-7';
-        const inactiveDotW = isSmall ? 'w-1.5' : 'w-2';
-
         function goToSlide(idx) {
             activeIdx = (idx + total) % total;
             if (track) {
                 track.style.transform = `translateX(-${activeIdx * 100}vw)`;
             }
             dots.forEach((dot, i) => {
-                if (i === activeIdx) {
-                    dot.classList.remove(inactiveDotW, 'bg-white/70');
-                    dot.classList.add(activeDotW, 'bg-white');
-                } else {
-                    dot.classList.remove(activeDotW, 'bg-white');
-                    dot.classList.add(inactiveDotW, 'bg-white/70');
-                }
+                dot.classList.toggle('is-active', i === activeIdx);
             });
         }
 
