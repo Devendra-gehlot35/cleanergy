@@ -19,8 +19,9 @@
             </svg>
         </a>
 
-        <!-- 2. Mail Circular Icon -->
-        <a href="mailto:customercare@cleanergy.us" 
+        <!-- 2. Mail Circular Icon (Direct Mailbox Opener) -->
+        <a href="mailto:customercare@cleanergy.us?subject=Cleanergy%20Battery%20Inquiry" 
+           onclick="openDirectMail(event, 'customercare@cleanergy.us')"
            title="Mail: customercare@cleanergy.us"
            aria-label="Mail Us"
            class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#12b3d6] hover:bg-[#0ea5e9] text-white shadow-lg flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95 cursor-pointer">

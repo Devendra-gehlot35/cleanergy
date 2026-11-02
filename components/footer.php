@@ -53,7 +53,7 @@
                     </a>
 
                     <!-- Email -->
-                    <a href="mailto:customercare@cleanergy.us" class="flex items-center gap-3.5 group cursor-pointer">
+                    <a href="mailto:customercare@cleanergy.us?subject=Cleanergy%20Battery%20Inquiry" onclick="openDirectMail(event, 'customercare@cleanergy.us')" class="flex items-center gap-3.5 group cursor-pointer">
                         <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[#a1e4f2] group-hover:bg-[#86d7e8] shrink-0 flex items-center justify-center text-[#0e7490] transition-colors">
                             <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>

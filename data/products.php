@@ -98,6 +98,8 @@ if (!isset($all_products)) {
     $all_products = [
         1 => [
             'id' => 1,
+            'product_code' => 'CLEANERGY-01',
+            'backend_id' => 'cmuzcw90g0000no7kud73tjpa',
             'handle' => 'cranking-sodium-ion-battery',
             'name' => 'Sodium Ion Starting Battery 12V, 200Ah',
             'title' => 'Sodium Ion Starting Battery 12V, 200Ah',
@@ -160,6 +162,8 @@ if (!isset($all_products)) {
         ],
         2 => [
             'id' => 2,
+            'product_code' => 'CLEANERGY-02',
+            'backend_id' => 'cmv0uehki0000m87kb7ydvm79',
             'handle' => '51-2-v-300-ah-15-kwh-lithium-battery',
             'name' => '51.2V 300Ah 15.3Kwh Lithium Phosphate Home Power Storage Battery',
             'title' => '51.2V 300Ah 15.3Kwh Lithium Phosphate Home Power Storage Battery',
@@ -231,6 +235,8 @@ if (!isset($all_products)) {
         ],
         3 => [
             'id' => 3,
+            'product_code' => 'CLEANERGY-03',
+            'backend_id' => 'cmv0wbvgv0002m87k5k3ypjin',
             'handle' => 'lithium-phosphate-48v-52v-105ah-5-460-wh',
             'name' => 'Lithium Phosphate 51.2V 105Ah 5,460Wh',
             'title' => 'Lithium Phosphate 51.2V 105Ah 5,460Wh',
@@ -291,6 +297,8 @@ if (!isset($all_products)) {
         ],
         4 => [
             'id' => 4,
+            'product_code' => 'CLEANERGY-04',
+            'backend_id' => 'cmv0wd1d60003m87kzkg6usd5',
             'handle' => 'heated-lithium-phosphate-24v-100ah-2400-wh',
             'name' => 'Lithium Phosphate 24V 100Ah 2,400Wh Battery',
             'title' => 'Lithium Phosphate 24V 100Ah 2,400Wh Battery',
@@ -351,6 +359,8 @@ if (!isset($all_products)) {
         ],
         5 => [
             'id' => 5,
+            'product_code' => 'CLEANERGY-05',
+            'backend_id' => 'cmv0we7n00004m87kb80rl0hz',
             'handle' => 'lithium-phosphate-12v-100ah-1-200wh-battery',
             'name' => 'Lithium Phosphate 12V 100Ah 1,200Wh Battery',
             'title' => 'Lithium Phosphate 12V 100Ah 1,200Wh Battery',
@@ -417,5 +427,31 @@ if (!function_exists('get_product_by_id')) {
         global $all_products;
         $id = (int)$id;
         return $all_products[$id] ?? $all_products[1];
+    }
+}
+
+if (!function_exists('get_product_by_code')) {
+    function get_product_by_code($code) {
+        global $all_products;
+        $clean = strtoupper(trim((string)$code));
+        foreach ($all_products as $p) {
+            if (isset($p['product_code']) && strtoupper($p['product_code']) === $clean) {
+                return $p;
+            }
+        }
+        return null;
+    }
+}
+
+if (!function_exists('get_product_by_backend_id')) {
+    function get_product_by_backend_id($backendId) {
+        global $all_products;
+        $clean = trim((string)$backendId);
+        foreach ($all_products as $p) {
+            if (isset($p['backend_id']) && $p['backend_id'] === $clean) {
+                return $p;
+            }
+        }
+        return null;
     }
 }

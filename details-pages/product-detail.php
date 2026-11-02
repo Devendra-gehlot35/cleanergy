@@ -136,9 +136,9 @@ $similarProducts = array_slice($similarProducts, 0, 4);
                         </div>
 
                         <!-- Buy Now Button -->
-                        <button type="button" onclick="handleBuyNow()" 
-                                class="flex-1 py-3.5 px-8 rounded-full text-white font-bold text-sm sm:text-base shadow-sm hover:shadow-md hover:scale-[1.02] transition-all duration-200 text-center cursor-pointer bg-[#239B52] hover:bg-[#1e8244]">
-                            Buy Now
+                        <button type="button" onclick="handleBuyNow(this)" 
+                                class="flex-1 py-3.5 px-8 rounded-full text-white font-bold text-sm sm:text-base shadow-sm hover:shadow-md hover:scale-[1.02] transition-all duration-200 text-center cursor-pointer bg-[#239B52] hover:bg-[#1e8244] flex items-center justify-center gap-2">
+                            <span>Buy Now</span>
                         </button>
                     </div>
 
@@ -278,8 +278,8 @@ $similarProducts = array_slice($similarProducts, 0, 4);
 
                             <!-- Buttons: Buy Now & Details -->
                             <div class="flex items-center gap-2 pt-1">
-                                <a href="/checkout.php?id=<?= (int)$sim['id'] ?>" class="flex-1 py-2 px-3 rounded-full text-white text-xs font-bold text-center transition-colors shadow-xs bg-[#239B52] hover:bg-[#1e8244]">
-                                    Buy Now
+                                <a href="/buy-now.php?code=<?= urlencode($sim['product_code'] ?? 'CLEANERGY-01') ?>" onclick="buyProduct('<?= htmlspecialchars($sim['product_code'] ?? 'CLEANERGY-01') ?>', 1, this); return false;" class="flex-1 py-2 px-3 rounded-full text-white text-xs font-bold text-center transition-colors shadow-xs bg-[#239B52] hover:bg-[#1e8244] flex items-center justify-center">
+                                    <span>Buy Now</span>
                                 </a>
                                 <a href="<?= htmlspecialchars($simUrl) ?>" class="flex-1 py-2 px-3 rounded-full border border-[#239B52] text-[#239B52] hover:bg-emerald-50 text-center text-xs font-bold transition-colors">
                                     Details
@@ -396,6 +396,9 @@ $similarProducts = array_slice($similarProducts, 0, 4);
     include __DIR__ . '/../components/footer.php';
     ?>
 
+    <!-- Cleanergy Admin Backend & Stripe Checkout Helper -->
+    <script src="/assets/js/cleanergy-checkout.js"></script>
+
     <!-- Interactive Scripts for Gallery, Tabs, Qty & FAQ -->
     <script>
     // Thumbnail Image Switcher
@@ -432,13 +435,14 @@ $similarProducts = array_slice($similarProducts, 0, 4);
         if (activePane) activePane.classList.remove('hidden');
     }
 
-    // Buy Now Handler -> Navigates to dedicated Checkout Page with Product & Quantity
-    function handleBuyNow() {
+    // Direct Buy Now Handler -> Calls Cleanergy Admin Backend APIs & Stripe Checkout
+    async function handleBuyNow(btn) {
         const qtyEl = document.getElementById('product-qty');
-        const qty = qtyEl ? qtyEl.innerText.trim() : '1';
-        window.location.href = '/checkout.php?id=<?= (int)$product['id'] ?>&qty=' + encodeURIComponent(qty);
+        const qty = qtyEl ? parseInt(qtyEl.innerText.trim(), 10) : 1;
+        await buyProduct('<?= htmlspecialchars($product['product_code'] ?? 'CLEANERGY-01') ?>', qty, btn);
     }
     const handleAddToCart = handleBuyNow;
+    const directBuyNow = (idOrCode, qty = 1, btn = null) => buyProduct(idOrCode, qty, btn);
 
     // Product FAQ Single Accordion Toggle
     function toggleProductFaq(btn) {

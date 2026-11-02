@@ -16,27 +16,24 @@
     include __DIR__ . '/components/navbar.php';
     ?>
 
-    <!-- 1. Hero Banner (Centered Title, Cleanergy Gradient matching site style) -->
-    <section class="relative w-full min-h-[460px] sm:min-h-[520px] overflow-hidden flex items-center justify-center text-center"
-             style="background: linear-gradient(135deg, #74d5e9 0%, #4ec1db 50%, #30b1cf 100%);">
+    <!-- 1. Hero Banner (Exact Same Size, Image & Full-Bleed Layout as Homepage & Other Pages) -->
+    <section class="relative w-full min-h-[580px] sm:min-h-[660px] h-[92vh] sm:h-screen max-h-[1000px] overflow-hidden bg-slate-900 flex items-center justify-center text-center">
+        <!-- Background Image Edge-to-Edge -->
+        <img src="/assets/img/banner3.jpg" 
+             alt="Clean Energy No Refund Policy Banner" 
+             class="absolute inset-0 w-full h-full object-cover object-center"
+             loading="eager">
         
-        <!-- Soft Marine / Water Background Overlay -->
-        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2070&q=80" 
-             alt="Clean Energy Water Background" 
-             class="absolute inset-0 w-full h-full object-cover object-center mix-blend-overlay opacity-30">
+        <!-- Gradient Overlay matching Homepage Hero Slider -->
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-900/50 to-slate-900/30 sm:bg-gradient-to-r sm:from-slate-950/80 sm:via-slate-900/50 sm:to-slate-950/80"></div>
+        <div class="absolute inset-0 bg-black/25"></div>
         
         <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 z-10 pt-28 sm:pt-36 pb-16 text-center">
-            
-            <!-- Category Badge -->
-            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/20 backdrop-blur-md text-slate-900 text-xs sm:text-sm font-semibold mb-4 mx-auto">
-                Customer Policy
-            </div>
-
-            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight mb-4">
-                No Refund <span class="italic font-['Playfair_Display',serif] text-slate-800">Policy</span>
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight mb-4 drop-shadow-md">
+                No Refund <span class="italic font-['Playfair_Display',serif] text-slate-100">Policy</span>
             </h1>
 
-            <p class="text-slate-800 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto leading-relaxed">
+            <p class="text-white/90 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto leading-relaxed drop-shadow">
                 Clear and transparent guidelines regarding custom orders, hazardous freight regulations, and warranty protection on all Cleanergy battery systems.
             </p>
 

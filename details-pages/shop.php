@@ -384,7 +384,7 @@
 
                             <!-- Buttons Row (Buy Now & Enquiry) -->
                             <div class="flex items-center gap-2.5 mt-auto pt-1">
-                                <a href="/checkout.php?id=<?= (int)$prod['id'] ?>" class="flex-1 py-2.5 px-4 rounded-full bg-[#239B52] hover:bg-[#1e8244] text-white text-center font-bold text-xs sm:text-sm transition-colors shadow-sm">
+                                <a href="/buy-now.php?code=<?= urlencode($prod['product_code'] ?? 'CLEANERGY-01') ?>" onclick="buyProduct('<?= htmlspecialchars($prod['product_code'] ?? 'CLEANERGY-01') ?>', 1, this); return false;" class="flex-1 py-2.5 px-4 rounded-full bg-[#239B52] hover:bg-[#1e8244] text-white text-center font-bold text-xs sm:text-sm transition-colors shadow-sm">
                                     Buy Now
                                 </a>
                                 <a href="/index.php#contact" 
@@ -653,6 +653,9 @@
     // Include Footer
     include __DIR__ . '/../components/footer.php';
     ?>
+
+    <!-- Cleanergy Admin Backend & Stripe Checkout Script -->
+    <script src="/assets/js/cleanergy-checkout.js"></script>
 
     <!-- Product FAQ Single Accordion Toggle (100% Transparent Background) -->
     <script>

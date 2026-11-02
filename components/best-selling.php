@@ -160,12 +160,11 @@ $products = array_slice(array_values($all_products), 0, 4);
 
                                 <!-- Buy Now -->
                                 <a
-                                    href="/checkout.php?id=<?= (int)$product['id'] ?>"
+                                    href="/buy-now.php?code=<?= urlencode($product['product_code'] ?? 'CLEANERGY-01') ?>"
+                                    onclick="buyProduct('<?= htmlspecialchars($product['product_code'] ?? 'CLEANERGY-01') ?>', 1, this); return false;"
                                     class="flex-1 py-2.5 px-3 rounded-full bg-[#41aa57] hover:bg-[#36954b] text-white text-xs sm:text-sm font-semibold transition-colors text-center"
                                 >
-
                                     Buy Now
-
                                 </a>
 
                             <?php else: ?>
@@ -226,5 +225,7 @@ $products = array_slice(array_values($all_products), 0, 4);
     </div>
 
 </section>
+
+<script src="/assets/js/cleanergy-checkout.js"></script>
 
 <!-- END BEST SELLING BATTERIES SECTION -->

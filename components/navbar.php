@@ -63,12 +63,25 @@ function isNavActive($path, $current) {
 
         <!-- Quick Actions Row inside Mobile Menu -->
         <div class="mt-4 pt-3.5 border-t border-slate-100 flex flex-col gap-2">
+            <!-- Call Button -->
             <a href="tel:+17347875246" class="flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-sm font-semibold transition-colors">
                 <svg class="w-4 h-4 text-cyan-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
                 </svg>
                 <span>Call: +1 (734) 787-5246</span>
             </a>
+
+            <!-- Mail Button (Direct Mailbox Open) -->
+            <a href="mailto:customercare@cleanergy.us?subject=Cleanergy%20Battery%20Inquiry" 
+               onclick="openDirectMail(event, 'customercare@cleanergy.us')" 
+               class="flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-sm font-semibold transition-colors">
+                <svg class="w-4 h-4 text-cyan-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+                <span>Mail: customercare@cleanergy.us</span>
+            </a>
+
+            <!-- Quote Button -->
             <a href="/contact.php" class="flex items-center justify-center py-2.5 px-4 rounded-xl bg-[#12b3d6] hover:bg-[#0ea5e9] text-white text-sm font-bold shadow-sm transition-colors text-center">
                 Get a Fast Quote
             </a>
@@ -88,6 +101,43 @@ function isNavActive($path, $current) {
 </style>
 
 <script>
+    // Universal Direct Mailbox Opener:
+    // Opens OS default mail app on mobile / configured desktop,
+    // and seamlessly falls back to Gmail Web Compose on desktop browsers without default mail client.
+    function openDirectMail(e, email) {
+        if (e && typeof e.preventDefault === 'function') {
+            e.preventDefault();
+        }
+        const targetEmail = email || 'customercare@cleanergy.us';
+        const subject = encodeURIComponent("Cleanergy Battery Inquiry");
+        const mailtoUrl = `mailto:${targetEmail}?subject=${subject}`;
+        const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(targetEmail)}&su=${subject}`;
+
+        const isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+        if (isMobile) {
+            window.location.href = mailtoUrl;
+            return;
+        }
+
+        // On desktop: listen for window blur (triggered when native mail app launches)
+        let appOpened = false;
+        const blurHandler = () => { appOpened = true; };
+        window.addEventListener('blur', blurHandler, { once: true });
+
+        // Trigger native mailto
+        window.location.href = mailtoUrl;
+
+        // If after 600ms no native mail client took focus, open web Gmail compose
+        setTimeout(() => {
+            window.removeEventListener('blur', blurHandler);
+            if (!appOpened && !document.hidden) {
+                window.open(gmailUrl, '_blank', 'noopener,noreferrer');
+            }
+        }, 600);
+    }
+    window.openDirectMail = openDirectMail;
+
     (function() {
         const header = document.getElementById('site-navbar');
         const navBtn = document.getElementById('nav-toggle-btn');

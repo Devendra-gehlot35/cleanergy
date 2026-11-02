@@ -146,7 +146,8 @@
                     </a>
 
                     <!-- Card 3: Email (Soft Cyan Background matching PDF) -->
-                    <a href="mailto:customercare@cleanergy.us" 
+                    <a href="mailto:customercare@cleanergy.us?subject=Cleanergy%20Battery%20Inquiry" 
+                       onclick="openDirectMail(event, 'customercare@cleanergy.us')"
                        class="rounded-2xl sm:rounded-3xl p-5 sm:p-6 flex items-center gap-5 shadow-xs transition-all hover:shadow-md group block cursor-pointer"
                        style="background-color: #EDFAFC;">
                         <!-- Cyan Icon Square -->

@@ -125,7 +125,8 @@
                     </a>
 
                     <!-- Card 3: Email -->
-                    <a href="mailto:customercare@cleanergy.us" 
+                    <a href="mailto:customercare@cleanergy.us?subject=Cleanergy%20Battery%20Inquiry" 
+                       onclick="openDirectMail(event, 'customercare@cleanergy.us')"
                        class="bg-white rounded-2xl p-3.5 sm:p-4 flex items-center gap-4 transition-all duration-300 hover:shadow-md group block cursor-pointer"
                        style="border: 1.5px solid #a5d6aa;">
                         <!-- Soft Green Icon Box -->
